@@ -6,6 +6,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgwWowModule } from 'ngx-wow';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { RouterModule, Routes } from '@angular/router'
+import { NgVerticalTimelineModule  } from 'ng-vertical-timeline';
+
+import { MatCardModule } from '@angular/material';
 
 
 const appRoutes: Routes = [
@@ -25,6 +28,8 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     NgwWowModule,
     RouterModule,
+    MatCardModule,
+    NgVerticalTimelineModule,
     RouterModule.forRoot(appRoutes)
 
   ],
