@@ -9,11 +9,13 @@ import { RouterModule, Routes } from '@angular/router'
 import { NgVerticalTimelineModule  } from 'ng-vertical-timeline';
 
 import { MatCardModule } from '@angular/material';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
-   { path: 'about', component: AboutusComponent }
+   { path: 'about', component: AboutusComponent },
+   {path: 'admin', component: AdminPanelComponent}
   
 ];
 
@@ -21,7 +23,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutusComponent
+    AboutusComponent,
+    AdminPanelComponent
   ],
   imports: [
     BrowserModule,
