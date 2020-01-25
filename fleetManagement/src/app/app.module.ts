@@ -17,6 +17,8 @@ import {CdkTableModule} from '@angular/cdk/table'
 import {MatSortModule, MatDialogModule} from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { TermsComponent } from './terms/terms.component';
+import { ChartComponent } from './admin-panel/chart/chart.component';
+import { HighchartsChartComponent } from 'highcharts-angular';
 
 
 const appRoutes: Routes = [
@@ -25,7 +27,8 @@ const appRoutes: Routes = [
    {path: 'terms', component: TermsComponent},
    {path: 'admin', component: AdminPanelComponent,
   children:[   
-    {path: 'vehicledetails', component: VehicleDetailsComponent}
+    {path: 'vehicledetails', component: VehicleDetailsComponent},
+     {path: 'chart', component: ChartComponent}
   ]
   
   }
@@ -39,7 +42,9 @@ const appRoutes: Routes = [
     AboutusComponent,
     AdminPanelComponent,
     VehicleDetailsComponent,
-    TermsComponent
+    TermsComponent,
+    ChartComponent,
+    HighchartsChartComponent
   ],
   imports: [
     BrowserModule,
