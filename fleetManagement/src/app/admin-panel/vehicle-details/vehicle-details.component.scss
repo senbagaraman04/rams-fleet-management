@@ -1,0 +1,12 @@
+table {
+    width:100%;
+}
+
+.mat-cell, .mat-header-cell {
+    border: 1px solid black;
+    text-align : center
+}
+
+tr:hover {
+  background-color:#DF4500;//  #DFDBD9;// #EB8646;
+}
