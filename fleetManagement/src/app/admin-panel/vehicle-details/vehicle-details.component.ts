@@ -1,9 +1,11 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
 import {MatTableModule, MatTableDataSource} from '@angular/material'
 import { DataSource } from '@angular/cdk/table';
 import { NgModule } from '@angular/core';
 import {MatSort} from '@angular/material/sort';
 import { FormControl } from '@angular/forms';
+import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+
 
 
 
@@ -55,30 +57,31 @@ export class VehicleDetailsComponent implements OnInit {
   //Display's the allowed column names
   displayedColumns: string[] = ['number', 'name', 'date', 'city', 'drivername','drivernumber','start','end','total'];
   dataSource = new MatTableDataSource(vehicle_data);
-  positionFilter = new FormControl();
-  nameFilter = new FormControl();
-  private filterValues = {  name: '' }
-
-  filteredValues = {
-     name: '', topFilter: false
-  };
+  showAlert : boolean
 
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
   
   //public dataSource: any
-  constructor() {
+  constructor( private dialog: MatDialog) {
+    this.showAlert = false;
    }
 
   ngOnInit() {
-    console.log("vehicle details loaded"); 
-    this.nameFilter.valueChanges
-      .subscribe(value => {
-        this.filterValues['name'] = value
-        this.dataSource.filter = JSON.stringify(this.filterValues)
-      });
+    console.log("vehicle details loaded");     
+    
     this.dataSource.sort = this.sort;  
   }
 
+
+  alertMethod() {
+    console.log("alert method clicked")
+   this.showAlert = !this.showAlert;
+    
+  }
+
+
  
+
+  
 }

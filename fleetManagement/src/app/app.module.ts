@@ -14,7 +14,7 @@ import { VehicleDetailsComponent } from './admin-panel/vehicle-details/vehicle-d
 import {MatTableModule} from '@angular/material'
 import { DataSource } from '@angular/cdk/table';
 import {CdkTableModule} from '@angular/cdk/table'
-import {MatSortModule} from '@angular/material';
+import {MatSortModule, MatDialogModule} from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
@@ -54,6 +54,7 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatInputModule,
     MatRippleModule,
+    MatDialogModule,
     RouterModule.forRoot(appRoutes)
 
   ],

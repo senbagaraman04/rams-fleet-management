@@ -7,15 +7,33 @@
            <div class="col-md-3">
                 Vehicle Details
           </div>
-          <div class=col-md-8>
-                <!-- <mat-form-field>
-                        <input matInput [formControl]="nameFilter" placeholder="Filter 1 (working sample)">
-                    </mat-form-field> -->
+          <div class=col-md-4>
+                
+           </div>
+          <div class=col-md-4>
+               <button  mat-stroked-button (click)="alertMethod()">Add new Vehicle</button>
           </div>
             </div>
         </div>
         <br>
+        <div class=container>
+                <div class="row">
+                    <div class="col-md-1">
+                            
+                    </div>
+               <div class="col-md-10">
+                    <div  *ngIf="showAlert" class="alert alert-primary" role="alert">
+                           The Feasibilty to add the vehicle from front-end is still in progress ! How about adding a tip to developer to speed up the process !! :)         
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="alertMethod()">
+                                    <span aria-hidden="true">&times;</span>
+                            </button>
+                     </div>
+              </div>
+              
+                </div>
+            </div>
         <br>
+        
         <div class=container>
                 <div class="row">
                     <div class="col-md-1">
@@ -71,4 +89,8 @@
                 </div>
             </div>
   </div>
+
+
+
+ 
   

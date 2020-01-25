@@ -59,7 +59,6 @@ $white-off: #DFDBD9;
 
 // MAIN NAV
 .main-nav{
-
   ul{
     border-top: solid 1px $gray-shine;
   }
@@ -73,39 +72,13 @@ $white-off: #DFDBD9;
     color: $white-off;
     font: 400 1.125em $sans;
     text-align: center;
-    //text-transform: lowercase;
-    // text:{
-    //   align: center;
-    //   transform: lowercase;
-    // }
-
     &:hover{
       color: #fff;
     }
   }
 }
 
-// SOCIAL LINKS
-.social-links{
-  border-bottom: solid 1px $gray-shine;
 
-  li{
-    width: 25%;
-    border-left: solid 1px $gray-shine;
-    &:first-child{ border: none; }
-  }
-
-  a{
-    display: block;
-    height: 5.5em;
-    text-align: center;
-    color: $gray-shine;
-    font: 0.75em/5.5em $sans;
-    &:hover{
-      color: $white-off;
-    }
-  }
-}
 
 // HOVER SLIDE EFFECT
 .list-hover-slide{
