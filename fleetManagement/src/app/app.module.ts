@@ -10,12 +10,19 @@ import { NgVerticalTimelineModule  } from 'ng-vertical-timeline';
 
 import { MatCardModule } from '@angular/material';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { VehicleDetailsComponent } from './admin-panel/vehicle-details/vehicle-details.component';
 
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
    { path: 'about', component: AboutusComponent },
-   {path: 'admin', component: AdminPanelComponent}
+  // {path: 'vehicledetails', component: VehicleDetailsComponent},
+   {path: 'admin', component: AdminPanelComponent,
+  children:[   
+    {path: 'vehicledetails', component: VehicleDetailsComponent}
+  ]
+  
+  }
   
 ];
 
@@ -24,7 +31,8 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     AboutusComponent,
-    AdminPanelComponent
+    AdminPanelComponent,
+    VehicleDetailsComponent
   ],
   imports: [
     BrowserModule,
