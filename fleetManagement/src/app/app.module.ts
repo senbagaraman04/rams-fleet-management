@@ -16,6 +16,7 @@ import { DataSource } from '@angular/cdk/table';
 import {CdkTableModule} from '@angular/cdk/table'
 import {MatSortModule, MatDialogModule} from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { TermsComponent } from './terms/terms.component';
 
 
 const appRoutes: Routes = [
@@ -37,7 +38,8 @@ const appRoutes: Routes = [
     HomeComponent,
     AboutusComponent,
     AdminPanelComponent,
-    VehicleDetailsComponent
+    VehicleDetailsComponent,
+    TermsComponent
   ],
   imports: [
     BrowserModule,
