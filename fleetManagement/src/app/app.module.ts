@@ -22,7 +22,7 @@ import { TermsComponent } from './terms/terms.component';
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
    { path: 'about', component: AboutusComponent },
-  // {path: 'vehicledetails', component: VehicleDetailsComponent},
+   {path: 'terms', component: TermsComponent},
    {path: 'admin', component: AdminPanelComponent,
   children:[   
     {path: 'vehicledetails', component: VehicleDetailsComponent}

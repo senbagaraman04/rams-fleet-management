@@ -8,6 +8,16 @@ table {
 }
 
 tr:hover {
-  background-color:#DF4500;//  #DFDBD9;// #EB8646;
+  background-color:#DF4500;
 }
 
+.blinking{
+    animation:blinkingText 5s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: #000;    }
+    49%{    color: #000; }
+    60%{    color: transparent; }
+    99%{    color:transparent;  }
+    100%{   color: #000;    }
+}
