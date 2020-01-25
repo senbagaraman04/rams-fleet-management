@@ -12,7 +12,6 @@ export class ChartComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  //  alert("chart");
   }
 
   highcharts = Highcharts;
