@@ -18,8 +18,8 @@ export const vehicle_data: VEHICLE[] = [
     {   
       vehicleNumber: 100, 
       vehicleName: "Ace2", 
-      dateOfEntry: "2/12/12",
-      city:'salem',
+      dateStart: "2/12/12",
+      cityOfTravel:'salem',
       driverName:"testDriver",
       driverNumber: 123354,
       startingMeter:10,

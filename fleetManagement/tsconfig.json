@@ -1,6 +1,8 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+   "experimentalDecorators": true,
+        "allowJs": true,
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
