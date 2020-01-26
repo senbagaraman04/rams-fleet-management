@@ -6,21 +6,21 @@ import {MatSort} from '@angular/material/sort';
 import { FormControl } from '@angular/forms';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
+import {VEHICLE} from '../../shared/vehicle';
 
 
+// export interface VEHICLE {  
+//   vehicleNumber: number; //Last four number is enough
+//   vehicleName: string; //Easily Identifieable name, which can be used for testing also
+//   dateOfEntry: string; 
+//   city:string;
+//   driverName: string;
+//   driverNumber: number;
+//   startingMeter: number; 
+//   endingMeter: number;
+//   totalToday: number; 
+// }
 
-export interface VEHICLE {  
-  vehicleNumber: number; //Last four number is enough
-  vehicleName: string; //Easily Identifieable name, which can be used for testing also
-  dateOfEntry: string; 
-  city:string;
-  driverName: string;
-  driverNumber: number;
-  startingMeter: number; 
-  endingMeter: number;
-  totalToday: number;
- 
-}
 const vehicle_data: VEHICLE[] = [
   {   
        vehicleNumber: 1001, 
