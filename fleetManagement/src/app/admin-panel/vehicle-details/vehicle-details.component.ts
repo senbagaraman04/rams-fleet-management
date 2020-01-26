@@ -8,7 +8,7 @@ import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 import {VEHICLE} from '../../shared/vehicle';
 
-import { vehicle_data } from '../../shared/vehicleData';
+import { HttpClientService } from '../../service/http-client.service';
 
 
 // const vehicle_data: VEHICLE[] = [
@@ -46,21 +46,37 @@ export class VehicleDetailsComponent implements OnInit {
 
   //Display's the allowed column names
   displayedColumns: string[] = ['number', 'name', 'date', 'city', 'drivername','drivernumber','start','end','total'];
-  dataSource = new MatTableDataSource(vehicle_data);
+  
   showAlert : boolean
-
-
+  vehicle_data: any;
+  dataSource = new MatTableDataSource(this.vehicle_data);
   @ViewChild(MatSort, {static: true}) sort: MatSort;
   
-  //public dataSource: any
-  constructor( private dialog: MatDialog) {
+  constructor( 
+          private dialog: MatDialog,
+          private httpClientService:HttpClientService 
+           ) 
+  {
     this.showAlert = false;
    }
 
   ngOnInit() {
     console.log("vehicle details loaded");     
     
+
+   this.httpClientService.getVehicles().subscribe(response => this.handleResponse(response));
+   
     this.dataSource.sort = this.sort;  
+  }
+
+  
+  handleResponse(response: VEHICLE): void {
+    console.log("Printing from handleresponse");
+    console.log(response);
+     this.vehicle_data = response;
+     this.dataSource = new MatTableDataSource(this.vehicle_data);
+     console.log(this.vehicle_data);
+
   }
 
 

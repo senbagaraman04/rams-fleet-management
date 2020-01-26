@@ -19,6 +19,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { TermsComponent } from './terms/terms.component';
 import { ChartComponent } from './admin-panel/chart/chart.component';
 import { HighchartsChartComponent } from 'highcharts-angular';
+import { HttpClientModule } from '@angular/common/http';
 
 
 const appRoutes: Routes = [
@@ -62,6 +63,7 @@ const appRoutes: Routes = [
     MatInputModule,
     MatRippleModule,
     MatDialogModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
 
   ],

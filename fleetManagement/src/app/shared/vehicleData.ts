@@ -1,11 +1,14 @@
 import { VEHICLE } from "./vehicle";
 
+// Added for testing purpose, will be removed from code , when the data gets from db
+
+
 export const vehicle_data: VEHICLE[] = [
     {   
          vehicleNumber: 1001, 
          vehicleName: "Ace", 
-         dateOfEntry: "12/12/12",
-         city:'salem',
+         dateStart: "12/12/12",
+         cityOfTravel:'salem',
          driverName:"testDriver",
          driverNumber: 123454,
          startingMeter:10,
