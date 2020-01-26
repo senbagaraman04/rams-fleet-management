@@ -8,44 +8,34 @@ import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 import {VEHICLE} from '../../shared/vehicle';
 
+import { vehicle_data } from '../../shared/vehicleData';
 
-// export interface VEHICLE {  
-//   vehicleNumber: number; //Last four number is enough
-//   vehicleName: string; //Easily Identifieable name, which can be used for testing also
-//   dateOfEntry: string; 
-//   city:string;
-//   driverName: string;
-//   driverNumber: number;
-//   startingMeter: number; 
-//   endingMeter: number;
-//   totalToday: number; 
-// }
 
-const vehicle_data: VEHICLE[] = [
-  {   
-       vehicleNumber: 1001, 
-       vehicleName: "Ace", 
-       dateOfEntry: "12/12/12",
-       city:'salem',
-       driverName:"testDriver",
-       driverNumber: 123454,
-       startingMeter:10,
-       endingMeter:100,
-       totalToday: 0
-  },   
-  {   
-    vehicleNumber: 100, 
-    vehicleName: "Ace2", 
-    dateOfEntry: "2/12/12",
-    city:'salem',
-    driverName:"testDriver",
-    driverNumber: 123354,
-    startingMeter:10,
-    endingMeter:10,
-    totalToday: 0
-},   
+// const vehicle_data: VEHICLE[] = [
+//   {   
+//        vehicleNumber: 1001, 
+//        vehicleName: "Ace", 
+//        dateOfEntry: "12/12/12",
+//        city:'salem',
+//        driverName:"testDriver",
+//        driverNumber: 123454,
+//        startingMeter:10,
+//        endingMeter:100,
+//        totalToday: 0
+//   },   
+//   {   
+//     vehicleNumber: 100, 
+//     vehicleName: "Ace2", 
+//     dateOfEntry: "2/12/12",
+//     city:'salem',
+//     driverName:"testDriver",
+//     driverNumber: 123354,
+//     startingMeter:10,
+//     endingMeter:10,
+//     totalToday: 0
+// },   
 
-];
+// ];
 
 @Component({
   selector: 'app-vehicle-details',
