@@ -50,6 +50,9 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    BrowserModule,
+    MatTableModule,
+    MatSortModule,
     NgwWowModule,
     RouterModule,
     MatCardModule,
