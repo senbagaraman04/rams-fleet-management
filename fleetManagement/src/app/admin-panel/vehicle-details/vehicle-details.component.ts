@@ -6,7 +6,7 @@ import {MatSort} from '@angular/material/sort';
 import { FormControl } from '@angular/forms';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
-import {VEHICLE} from '../../shared/vehicle';
+//import {VEHICLE} from '../../shared/vehicle';
 
 import { HttpClientService } from '../../service/http-client.service';
 
@@ -45,7 +45,7 @@ import { HttpClientService } from '../../service/http-client.service';
 export class VehicleDetailsComponent implements OnInit {
 
   //Display's the allowed column names
-  displayedColumns: string[] = ['number', 'name', 'date', 'city', 'drivername','drivernumber','start','end','total'];
+  displayedColumns: string[] = ['vehicleNumber', 'name', 'date', 'cityOfTravel', 'drivername','drivernumber','start','end','total'];
   
   showAlert : boolean
   vehicle_data: any;
@@ -69,16 +69,17 @@ export class VehicleDetailsComponent implements OnInit {
     this.dataSource.sort = this.sort;  
   }
 
-  
-  handleResponse(response: VEHICLE): void {
+
+  handleResponse(response): void {
     console.log("Printing from handleresponse");
     console.log(response);
      this.vehicle_data = response;
      this.dataSource = new MatTableDataSource(this.vehicle_data);
      console.log(this.vehicle_data);
+     this.dataSource.sort = this.sort;
 
   }
-
+ 
 
   alertMethod() {
     console.log("alert method clicked")

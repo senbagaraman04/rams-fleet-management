@@ -42,7 +42,7 @@
                <div class="col-md-11">
                  <table mat-table [dataSource] = "dataSource" class="mat-elevation-z8" matSort>
                
-                 <ng-container matColumnDef = "number" >
+                 <ng-container matColumnDef = "vehicleNumber" >
                         <th mat-header-cell *matHeaderCellDef mat-sort-header> Vehicle Number</th>
                         <td mat-cell *matCellDef = "let element"> {{element.vehicleNumber}}</td>
                   </ng-container>
@@ -55,8 +55,8 @@
                         <td mat-cell *matCellDef = "let element"> {{element.dateStart}}</td>
                  </ng-container>
 
-                 <ng-container matColumnDef = "city">
-                        <th mat-header-cell *matHeaderCellDef>City</th>
+                 <ng-container matColumnDef = "cityOfTravel">
+                        <th mat-header-cell *matHeaderCellDef >City</th>
                         <td mat-cell *matCellDef = "let element"> {{element.cityOfTravel}}</td>
                  </ng-container>
 
