@@ -150,8 +150,8 @@ export class VehicleDetailsComponent implements OnInit {
       let response = JSON.parse(JSON.stringify(res));
       console.log(response);
       console.log(response.data);
-      
       this.usersList = response.data;
+      this.dataSource =new MatTableDataSource(this.usersList);
     })
   }
 

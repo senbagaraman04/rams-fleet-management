@@ -15,13 +15,13 @@ export class HttpClientService {
   constructor( private httpClient: HttpClient) { }
 
  
-  serverUrl: string = "http://localhost:8081/api/"
+  serverUrl: string = "http://localhost:8080/api/"
 
   get(url: string): Observable<any> {
     console.log("Printing from1");
     console.log(url)
     console.log(this.httpClient.get(this.serverUrl + url));
-      return of(this.httpClient.get(this.serverUrl + url));
+      return this.httpClient.get(this.serverUrl + url);
   }
 
   post(url: string, data: VEHICLE): Observable<any> {
