@@ -66,14 +66,14 @@
                         <th mat-header-cell *matHeaderCellDef>Total Travelled Today</th>
                         <td mat-cell *matCellDef = "let element"> {{element.endingMeter - element.startingMeter }}</td>
                  </ng-container>
-                 <!-- <ng-container matColumnDef = "Actions">
+                 <ng-container matColumnDef = "action">
                      <th mat-header-cell *matHeaderCellDef>Action</th>
                      <td mat-cell *matCellDef = "let element"> 
-                            <span style="margin-right: 10px"><button (click)="edit()"
-                                   class="btn btn-primary mb-2">Edit</button> </span>
-                           <span><button (click)="delete()" class="btn btn-primary mb-2">Delete</button></span>                      
+                            <!-- <button (click)="edit(element)" 
+                                   class="btn btn-primary mb-2">Edit</button>
+                          <button (click)="delete()" class="btn btn-primary mb-2">Delete</button>                     -->
                      </td>
-              </ng-container> -->
+              </ng-container>
               
 
                    <tr mat-header-row *matHeaderRowDef="displayedColumns" sticky></tr>

@@ -9,6 +9,7 @@ import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {VEHICLE} from '../../shared/vehicle';
 
 import { HttpClientService } from '../../service/http-client.service';
+import { validateHorizontalPosition } from '@angular/cdk/overlay';
 
 
 // const vehicle_data: VEHICLE[] = [
@@ -96,7 +97,7 @@ import { HttpClientService } from '../../service/http-client.service';
 export class VehicleDetailsComponent implements OnInit {
 
   //Display's the allowed column names
-  displayedColumns: string[] = ['vehicleNumber', 'vehicleName', 'date', 'cityOfTravel', 'drivername','drivernumber','start','end','total'];
+  displayedColumns: string[] = ['vehicleNumber', 'vehicleName', 'date', 'cityOfTravel', 'drivername','drivernumber','start','end','total','action'];
   
   showAlert : boolean
   vehicle_data: any;
@@ -133,7 +134,8 @@ export class VehicleDetailsComponent implements OnInit {
     this.myForm = this.formBuilder.group({
       vehicleName: new FormControl(this.student ? this.student.vehicleName: '', Validators.required),
       cityOfTravel: new FormControl(this.student ? this.student.cityOfTravel : '', Validators.required),
-      vehicleNumber: new FormControl(this.student ? this.student.vehicleNumber : '', Validators.required)
+      vehicleNumber: new FormControl(this.student ? this.student.vehicleNumber : '', Validators.required),
+      date: new FormControl(this.student? this.student.dateStart : '',Validators.required)
     });
   }
 
@@ -169,9 +171,10 @@ export class VehicleDetailsComponent implements OnInit {
 
   
   edit(student: VEHICLE): void {
+    console.log(student)
     this.student = student
     this.myForm.controls['vehicleNumber'].setValue(this.student.vehicleNumber)
-    this.myForm.controls['name'].setValue(this.student.vehicleName)
+    this.myForm.controls['vehicleName'].setValue(this.student.vehicleName)
     this.myForm.controls['cityOfTravel'].setValue(this.student.cityOfTravel)
   }
 
