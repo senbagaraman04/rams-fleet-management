@@ -1,5 +1,6 @@
 export interface VEHICLE {  
-    vehicleNumber: number; //Last four number is enough
+     id : number;
+    vehicleNumber: string; 
     vehicleName: string; //Easily Identifieable name, which can be used for testing also
     dateStart: string; 
     cityOfTravel:string;
@@ -7,6 +8,6 @@ export interface VEHICLE {
     driverNumber: number;
     startingMeter: number; 
     endingMeter: number;
-    totalToday: number; 
+    totalMeter: number; 
     //Testing
   }

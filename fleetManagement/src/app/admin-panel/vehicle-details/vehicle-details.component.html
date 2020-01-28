@@ -32,7 +32,7 @@
                         <th mat-header-cell *matHeaderCellDef mat-sort-header> Vehicle Number</th>
                         <td mat-cell *matCellDef = "let element"> {{element.vehicleNumber}}</td>
                   </ng-container>
-                 <ng-container matColumnDef = "name">
+                 <ng-container matColumnDef = "vehicleName">
                     <th mat-header-cell *matHeaderCellDef> Vehicle Name</th>
                     <td mat-cell *matCellDef = "let element"> {{element.vehicleName}}</td>
                  </ng-container>
@@ -66,6 +66,14 @@
                         <th mat-header-cell *matHeaderCellDef>Total Travelled Today</th>
                         <td mat-cell *matCellDef = "let element"> {{element.endingMeter - element.startingMeter }}</td>
                  </ng-container>
+                 <!-- <ng-container matColumnDef = "Actions">
+                     <th mat-header-cell *matHeaderCellDef>Action</th>
+                     <td mat-cell *matCellDef = "let element"> 
+                            <span style="margin-right: 10px"><button (click)="edit()"
+                                   class="btn btn-primary mb-2">Edit</button> </span>
+                           <span><button (click)="delete()" class="btn btn-primary mb-2">Delete</button></span>                      
+                     </td>
+              </ng-container> -->
               
 
                    <tr mat-header-row *matHeaderRowDef="displayedColumns" sticky></tr>

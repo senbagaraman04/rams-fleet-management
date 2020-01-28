@@ -20,6 +20,7 @@ import { TermsComponent } from './terms/terms.component';
 import { ChartComponent } from './admin-panel/chart/chart.component';
 import { HighchartsChartComponent } from 'highcharts-angular';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpClientService } from './service/http-client.service';
 
 
 const appRoutes: Routes = [
@@ -70,7 +71,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
 
   ],
-  providers: [],
+  providers: [HttpClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
