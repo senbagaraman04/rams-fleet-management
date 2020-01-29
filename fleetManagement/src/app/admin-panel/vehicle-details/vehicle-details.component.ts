@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef, ɵConsole } from '@angular/core';
 import {MatTableModule, MatTableDataSource} from '@angular/material'
 import { DataSource } from '@angular/cdk/table';
 import { NgModule } from '@angular/core';
@@ -103,6 +103,7 @@ export class VehicleDetailsComponent implements OnInit {
   vehicle_data: any;
   dataSource = new MatTableDataSource(this.vehicle_data);
   @ViewChild(MatSort, {static: true}) sort: MatSort;
+  @ViewChild('f', {static:true}) ngForm;
   
   constructor( 
           private dialog: MatDialog,
@@ -128,48 +129,58 @@ export class VehicleDetailsComponent implements OnInit {
   usersList: Array<VEHICLE>
   student: VEHICLE = undefined
   myForm: FormGroup;
-
+ 
 
   createForm() {
     this.myForm = this.formBuilder.group({
       vehicleName: new FormControl(this.student ? this.student.vehicleName: '', Validators.required),
       cityOfTravel: new FormControl(this.student ? this.student.cityOfTravel : '', Validators.required),
       vehicleNumber: new FormControl(this.student ? this.student.vehicleNumber : '', Validators.required),
-      date: new FormControl(this.student? this.student.dateStart : '',Validators.required)
+      dateStart: new FormControl(this.student? this.student.dateStart : '',Validators.required),
+      driverName: new FormControl(this.student? this.student.driverName : '',Validators.required),
+      driverNumber: new FormControl(this.student? this.student.driverNumber : '',Validators.required),
+      startingMeter: new FormControl(this.student? this.student.startingMeter : '',Validators.required),
+      endingMeter: new FormControl(this.student? this.student.endingMeter : ''),
+      totalToday: new FormControl(this.student? this.myForm.controls['endingMeter'].value() - this.myForm.controls['startingMeter'].value() : '')
     });
   }
 
-  private submitForm(data: FormGroup) {
-    if (data.valid)
+ submitForm(data) {
+   console.log(data)
+     if (data.valid)
       this.addStudent(data.value)
   }
 
   getData(): void {
     this.httpClientService.get(this.url).subscribe(res => {
-      console.log("SENBAGARAMAN");
-      console.log(res);
-      console.log(this.url);
       let response = JSON.parse(JSON.stringify(res));
-      console.log(response);
-      console.log(response.data);
       this.usersList = response.data;
       this.dataSource =new MatTableDataSource(this.usersList);
     })
   }
 
  addStudent(student: VEHICLE): void {
-    if (this.student)
+     if (this.student)
       student.id = this.student.id
-    this.httpClientService.post(this.url, student).subscribe(res => {
-      let response = JSON.parse(JSON.stringify(res))
-      this.getData()
-      this.myForm.reset()
+    this.httpClientService.post(this.url, student).subscribe(res => {    
+      let response = JSON.parse(JSON.stringify(res))    
+      this.getData();
+      this.myForm.reset();
+     this.showAlert = false;
       this.student = undefined
     }, error => {
     })
   }
+  cancelForm() {
+    this.showAlert = false;
+    this.myForm.reset();
+  }
 
-  
+  clearForm() {
+    this.myForm.reset();
+  }
+
+
   edit(student: VEHICLE): void {
     console.log(student)
     this.student = student
@@ -177,11 +188,6 @@ export class VehicleDetailsComponent implements OnInit {
     this.myForm.controls['vehicleName'].setValue(this.student.vehicleName)
     this.myForm.controls['cityOfTravel'].setValue(this.student.cityOfTravel)
   }
-
-
-
- 
-
 
   delete(student: VEHICLE): void {
     this.httpClientService.delete(this.url, student).subscribe(res => {
@@ -192,20 +198,15 @@ export class VehicleDetailsComponent implements OnInit {
   }
 
   handleResponse(response): void {
-    console.log("Printing from handleresponse");
-    console.log(response);
      this.vehicle_data = response;
      this.dataSource = new MatTableDataSource(this.vehicle_data);
-     console.log(this.vehicle_data);
      this.dataSource.sort = this.sort;
 
   }
  
 
   alertMethod() {
-    console.log("alert method clicked")
-   this.showAlert = !this.showAlert;
-    
+   this.showAlert = !this.showAlert;    
   }
 
 

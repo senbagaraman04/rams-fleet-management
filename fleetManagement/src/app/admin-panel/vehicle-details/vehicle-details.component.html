@@ -12,71 +12,60 @@
         <br>
                
                <div class="col-md-10 ">
-                    <div    role="alert">   <!--*ngIf="showAlert"-->
-                     <div class="example-container  ">
-                            <!-- <form class="example-container" [formGroup]="options">
-                              <mat-checkbox formControlName="hideRequired">Hide required marker</mat-checkbox>
-                              <div>
-                                <label>Float label: </label>
-                                <mat-radio-group formControlName="floatLabel">
-                                  <mat-radio-button value="auto">Auto</mat-radio-button>
-                                  <mat-radio-button value="always">Always</mat-radio-button>
-                                  <mat-radio-button value="never">Never</mat-radio-button>
-                                </mat-radio-group>
-                              </div>
-                            </form> -->
-
+                    <div *ngIf="showAlert"   role="alert">   <!--*ngIf="showAlert"-->
+                     <form [formGroup]="myForm"  #f="ngForm">
+                     <div class="form-container">
                             <div class="row col-md-4">
                                    <mat-form-field [hideRequiredMarker]=false [floatLabel]=true >
-                                          <input matInput placeholder="Vehicle Name" required>
+                                          <input formControlName="vehicleName" matInput placeholder="Vehicle Name" required>
                                           </mat-form-field>
                                           <br>
                                           <mat-form-field [hideRequiredMarker]=false [floatLabel]=true >
-                                            <input matInput placeholder="Vehicle Number" required>
+                                            <input formControlName="vehicleNumber" matInput placeholder="Vehicle Number" required>
                                           </mat-form-field>
                                           <br>
                                           <mat-form-field [hideRequiredMarker]=false [floatLabel]=true >
-                                            <input matInput placeholder="Driver Name" required>
+                                            <input formControlName="driverName" matInput placeholder="Driver Name" required>
                                           </mat-form-field>
                                           <br>
                                           <mat-form-field [hideRequiredMarker]=false [floatLabel]=true >
-                                            <input matInput placeholder="Driver Number" required>
+                                            <input formControlName="driverNumber" matInput placeholder="Driver Number" required>
                                           </mat-form-field>
                             </div>
                             <div class = "row col-md-4">
                                    <br>
                                    <mat-form-field [hideRequiredMarker]=false [floatLabel]=true >
-                                     <input matInput placeholder="City " required>
+                                     <input formControlName="cityOfTravel" matInput placeholder="City " required>
                                    </mat-form-field>
                                    <br>
                                    <mat-form-field [hideRequiredMarker]=false [floatLabel]=true >
-                                     <input matInput placeholder="Date" required>
+                                     <input formControlName="dateStart" matInput placeholder="Date" required>
                                    </mat-form-field>
                                     <br>
                                    <mat-form-field [hideRequiredMarker]=false [floatLabel]=true >
-                                     <input matInput placeholder="Starting Meter" required>
+                                     <input formControlName="startingMeter" matInput placeholder="Starting Meter" required>
                                    </mat-form-field>
                                    <br>
   
                                    <mat-form-field [hideRequiredMarker]=false [floatLabel]=true >
-                                     <input matInput placeholder="Ending Meter" >
+                                     <input formControlName= "endingMeter" matInput placeholder="Ending Meter">
                                    </mat-form-field>
                                    <br>  
+                                  
                             </div>
                             <div class = "col-md-4">
                                    
                                 
 
-              <button submit class="btn btn-info"> Clear  </button>
+              <button submit class="btn btn-info" (click)="clearForm()"> Clear  </button>
               <br>
               <br>
-              <button submit class="btn btn-success">Submit</button>
+               <button type="submit" class="btn btn-success" (click)="submitForm(myForm)">Submit</button>
               <br>
               <br>
-              <button submit class="btn btn-danger">Cancel</button>
+              <button submit class="btn btn-danger" (click)="cancelForm()">Cancel</button>
 
-                            </div>
-                          
+                            </div>        
                                  
                                
                           
@@ -91,8 +80,11 @@
                               </mat-select>
                               <mat-label><mat-icon>favorite</mat-icon> <b> Fancy</b> <i> label</i></mat-label>
                             </mat-form-field> -->
-                          </div>
-                          
+                       
+                     
+                     
+                     </div>
+                        </form>  
                      
               
                 </div>
