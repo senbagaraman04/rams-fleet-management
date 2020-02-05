@@ -137,8 +137,10 @@
                  <ng-container matColumnDef = "action">
                      <th mat-header-cell *matHeaderCellDef>Action</th>
                      <td mat-cell *matCellDef = "let element"> 
-                                   <img src="https://img.icons8.com/officel/16/000000/edit.png" value="edit" tool-tip="Edit">
-                            <!-- <button (click)="edit(element)" 
+                                   <img src="https://img.icons8.com/officel/16/000000/edit.png" value="edit" (click)=edit(element) tool-tip="Edit">
+                                   <img src="https://img.icons8.com/dusk/64/000000/delete-row.png" value="delete" (click)=delete(element) tool-top="Delete">
+                           
+                                   <!-- <button (click)="edit(element)" 
                                    class="btn btn-primary mb-2">Edit</button>
                           <button (click)="delete()" class="btn btn-primary mb-2">Delete</button>                     -->
                      </td>

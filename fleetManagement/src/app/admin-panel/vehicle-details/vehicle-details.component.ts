@@ -125,7 +125,6 @@ export class VehicleDetailsComponent implements OnInit {
 
 
   url: string = 'student';
-  title = 'Spring Boot + Angular 8 CRUD Example';
   usersList: Array<VEHICLE>
   student: VEHICLE = undefined
   myForm: FormGroup;
@@ -183,10 +182,18 @@ export class VehicleDetailsComponent implements OnInit {
 
   edit(student: VEHICLE): void {
     console.log(student)
+    this.showAlert = true;
     this.student = student
     this.myForm.controls['vehicleNumber'].setValue(this.student.vehicleNumber)
     this.myForm.controls['vehicleName'].setValue(this.student.vehicleName)
     this.myForm.controls['cityOfTravel'].setValue(this.student.cityOfTravel)
+    this.myForm.controls['dateStart'].setValue(this.student.dateStart)
+    this.myForm.controls['driverName'].setValue(this.student.driverName)
+    this.myForm.controls['driverNumber'].setValue(this.student.driverNumber)
+    this.myForm.controls['startingMeter'].setValue(this.student.startingMeter)
+    this.myForm.controls['endingMeter'].setValue(this.student.endingMeter)
+    this.myForm.controls['totalMeter'].setValue(this.student.totalMeter)
+  
   }
 
   delete(student: VEHICLE): void {
