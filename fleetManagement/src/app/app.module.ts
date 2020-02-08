@@ -21,6 +21,7 @@ import { HighchartsChartComponent } from 'highcharts-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientService } from './service/http-client.service';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { HighchartsChartModule } from 'highcharts-angular';
 
 
 const appRoutes: Routes = [
@@ -52,7 +53,6 @@ const appRoutes: Routes = [
     VehicleDetailsComponent,
     TermsComponent,
     ChartComponent,
-    HighchartsChartComponent,
     WelcomeComponent
   ],
   imports: [
@@ -75,6 +75,8 @@ const appRoutes: Routes = [
     MatRippleModule,
     MatDialogModule,
     HttpClientModule,
+    HighchartsChartModule,
+    
     RouterModule.forRoot(appRoutes)
 
   ],
