@@ -11,6 +11,8 @@ jobs:
       run: cd fleetManagement/
     - name: Print the path
       run: ls
+    - name: Move again 
+      run: cd fleetManagement
    # - name: Setup Node.js for use with actions
    #   uses: actions/setup-node@v1
       #installs Node Module to run the code
