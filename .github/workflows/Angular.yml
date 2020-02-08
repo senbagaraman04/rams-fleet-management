@@ -8,7 +8,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Move to Frontend Branch 
-      run: cd fleetManagement/fleetManagement
+      run: cd fleetManagement/fleetManagement/
     - name: Print the path
       run: ls
    # - name: Setup Node.js for use with actions
