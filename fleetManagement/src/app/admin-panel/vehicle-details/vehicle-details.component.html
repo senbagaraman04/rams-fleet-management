@@ -12,7 +12,7 @@
         <br>
                
                <div class="col-md-10 ">
-                    <div *ngIf="showAlert"   role="alert">   <!--*ngIf="showAlert"-->
+                    <div *ngIf="showAlert"   role="alert"> 
                      <form [formGroup]="myForm"  #f="ngForm">
                      <div class="form-container">
                             <div class="row col-md-4">
@@ -66,23 +66,7 @@
               <button submit class="btn btn-danger" (click)="cancelForm()">Cancel</button>
 
                             </div>        
-                                 
-                               
-                          
-                           
-                          
-                            <!-- <mat-form-field
-                                [hideRequiredMarker]="options.value.hideRequired"
-                                [floatLabel]="options.value.floatLabel">
-                              <mat-select required>
-                                <mat-option>-- None --</mat-option>
-                                <mat-option value="option">Option</mat-option>
-                              </mat-select>
-                              <mat-label><mat-icon>favorite</mat-icon> <b> Fancy</b> <i> label</i></mat-label>
-                            </mat-form-field> -->
-                       
-                     
-                     
+
                      </div>
                         </form>  
                      
@@ -137,15 +121,11 @@
                  <ng-container matColumnDef = "action">
                      <th mat-header-cell *matHeaderCellDef>Action</th>
                      <td mat-cell *matCellDef = "let element"> 
-                                   <img src="https://img.icons8.com/officel/16/000000/edit.png" value="edit" (click)=edit(element) tool-tip="Edit">
-                                   <img src="https://img.icons8.com/dusk/64/000000/delete-row.png" value="delete" (click)=delete(element) tool-top="Delete">
+                                   <img alt="edit" src="https://img.icons8.com/officel/16/000000/edit.png" value="edit" (click)=edit(element) tool-tip="Edit">
+                                   <img alt="delete" src="https://img.icons8.com/dusk/64/000000/delete-row.png" value="delete" (click)=delete(element) tool-top="Delete">
                            
-                                   <!-- <button (click)="edit(element)" 
-                                   class="btn btn-primary mb-2">Edit</button>
-                          <button (click)="delete()" class="btn btn-primary mb-2">Delete</button>                     -->
-                     </td>
-              </ng-container>
-              
+                      </td>
+              </ng-container>             
 
                    <tr mat-header-row *matHeaderRowDef="displayedColumns" sticky></tr>
                    <tr mat-row *matRowDef ="let row; columns: displayedColumns;"></tr>

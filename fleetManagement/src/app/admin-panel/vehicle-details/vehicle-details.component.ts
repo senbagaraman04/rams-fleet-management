@@ -12,87 +12,11 @@ import { HttpClientService } from '../../service/http-client.service';
 import { validateHorizontalPosition } from '@angular/cdk/overlay';
 
 
-// const vehicle_data: VEHICLE[] = [
-//   {   
-//        vehicleNumber: 1001, 
-//        vehicleName: "Ace", 
-//        dateOfEntry: "12/12/12",
-//        city:'salem',
-//        driverName:"testDriver",
-//        driverNumber: 123454,
-//        startingMeter:10,
-//        endingMeter:100,
-//        totalToday: 0
-//   },   
-//   {   
-//     vehicleNumber: 100, 
-//     vehicleName: "Ace2", 
-//     dateOfEntry: "2/12/12",
-//     city:'salem',
-//     driverName:"testDriver",
-//     driverNumber: 123354,
-//     startingMeter:10,
-//     endingMeter:10,
-//     totalToday: 0
-// },   
-
-// ];
-
 @Component({
   selector: 'app-vehicle-details',
   templateUrl: './vehicle-details.component.html',
   styleUrls: ['./vehicle-details.component.scss']
 })
-// export class VehicleDetailsComponent implements OnInit {
-
-//   //Display's the allowed column names
-//   displayedColumns: string[] = ['vehicleNumber', 'name', 'date', 'cityOfTravel', 'drivername','drivernumber','start','end','total'];
-  
-//   showAlert : boolean
-//   vehicle_data: any;
-//   dataSource = new MatTableDataSource(this.vehicle_data);
-//   @ViewChild(MatSort, {static: true}) sort: MatSort;
-  
-//   constructor( 
-//           private dialog: MatDialog,
-//           private httpClientService:HttpClientService 
-//            ) 
-//   {
-//     this.showAlert = false;
-//    }
-
-//   ngOnInit() {
-//     console.log("vehicle details loaded");     
-    
-
-//    this.httpClientService.getVehicles().subscribe(response => this.handleResponse(response));
-   
-//     this.dataSource.sort = this.sort;  
-//   }
-
-
-//   handleResponse(response): void {
-//     console.log("Printing from handleresponse");
-//     console.log(response);
-//      this.vehicle_data = response;
-//      this.dataSource = new MatTableDataSource(this.vehicle_data);
-//      console.log(this.vehicle_data);
-//      this.dataSource.sort = this.sort;
-
-//   }
- 
-
-//   alertMethod() {
-//     console.log("alert method clicked")
-//    this.showAlert = !this.showAlert;
-    
-//   }
-
-
- 
-
-  
-// }
 
 export class VehicleDetailsComponent implements OnInit {
 
@@ -115,11 +39,8 @@ export class VehicleDetailsComponent implements OnInit {
    }
 
   ngOnInit() {
-    console.log("vehicle details loaded");     
     this.createForm();
-    this.getData();
-
-   
+    this.getData();   
     this.dataSource.sort = this.sort;  
   }
 

@@ -12,7 +12,6 @@ import { MatCardModule, MatButtonModule, MatFormFieldModule, MatInputModule, Mat
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { VehicleDetailsComponent } from './admin-panel/vehicle-details/vehicle-details.component';
 import {MatTableModule} from '@angular/material'
-import { DataSource } from '@angular/cdk/table';
 import {CdkTableModule} from '@angular/cdk/table'
 import {MatSortModule, MatDialogModule} from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
