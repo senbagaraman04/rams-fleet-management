@@ -1,8 +1,6 @@
 name: Angular
 #Version 2020_2_1 
-on: 
-  push:
-    branches: release_v_2020_2_1   
+on: [push]
 
 jobs:
   build:   
