@@ -24,7 +24,8 @@ import { HttpClientService } from './service/http-client.service';
 
 
 const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent },
+  {path: '', component: HomeComponent},
+   { path: 'home', component: HomeComponent },
    { path: 'about', component: AboutusComponent },
    {path: 'terms', component: TermsComponent},
    {path: 'admin', component: AdminPanelComponent,
@@ -33,6 +34,7 @@ const appRoutes: Routes = [
      {path: 'chart', component: ChartComponent}
   ]
   
+
   }
   
 ];
