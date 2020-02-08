@@ -12,8 +12,12 @@ jobs:
     - name: Print the path
       run: ls
     - name: Move again 
-      run: cd fleetManagement
+      run: cd fleetManagement/
     - name: Print the path
+      run: ls
+    - name: move backend
+      run: cd fleetBackend
+    - name: print
       run: ls
    # - name: Setup Node.js for use with actions
    #   uses: actions/setup-node@v1
