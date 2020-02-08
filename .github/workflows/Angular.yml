@@ -13,6 +13,8 @@ jobs:
       #installs Node Module to run the code
     - name: Install dependencies
       run: npm install
+    - name: Move to Frontend Branch 
+      run: cd fleetManagement/
       #Builds the angular application using node and in production mode
     - name: Build
       run: npm run build -- --prod 
