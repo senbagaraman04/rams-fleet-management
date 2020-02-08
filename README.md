@@ -1,3 +1,7 @@
+# Commited to Quality:
+[![Maintainability](https://api.codeclimate.com/v1/badges/359be3494ee76f3f3df8/maintainability)](https://codeclimate.com/github/senbagaraman04/rams-fleet-management/maintainability)
+
+
 # rams-fleet-management
 A Simple fleet management system, which provides end to end solutions for the owner and helps in optimizing the cost and managing the fleet with a clean book.
 
