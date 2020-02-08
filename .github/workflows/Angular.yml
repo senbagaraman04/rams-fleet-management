@@ -7,23 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Move to Frontend Branch 
-      run: cd fleetManagement/
-    - name: Print the path
-      run: ls
-    - name: Move again 
-      run: cd fleetManagement/
-    - name: Print the path
-      run: ls
-    - name: move backend
-      run: cd fleetBackend
-    - name: print
-      run: ls
-   # - name: Setup Node.js for use with actions
-   #   uses: actions/setup-node@v1
+    - name: Setup Node.js for use with actions
+     uses: actions/setup-node@v1
       #installs Node Module to run the code
-    #- name: Install dependencies
-    #  run: npm install
+    - name: Install dependencies
+      run: npm install
       #Builds the angular application using node and in production mode
-  #  - name: Build
-   #   run: npm run build -- --prod 
+    - name: Build
+      run: npm run build -- --prod 
