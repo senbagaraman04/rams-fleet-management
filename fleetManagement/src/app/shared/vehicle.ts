@@ -9,5 +9,4 @@ export interface VEHICLE {
     startingMeter: number; 
     endingMeter: number;
     totalMeter: number; 
-    //Testing
   }

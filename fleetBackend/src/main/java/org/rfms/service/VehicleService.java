@@ -11,17 +11,17 @@ import org.springframework.stereotype.Service;
 public class VehicleService {
 
 	@Autowired
-	private VehicleDAO studentDAO;
+	private VehicleDAO vehcileDAO;
 
 	public List<Vehicle> get() {
-		return studentDAO.get();
+		return vehcileDAO.get();
 	}
 
-	public Vehicle save(Vehicle student) {
-		return studentDAO.save(student);
+	public Vehicle save(Vehicle vehicle) {
+		return vehcileDAO.save(vehicle);
 	}
 
 	public void delete(int id) {
-		studentDAO.delete(id);
+	    vehcileDAO.delete(id);
 	}
 }
