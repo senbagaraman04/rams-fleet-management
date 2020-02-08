@@ -124,23 +124,23 @@ export class VehicleDetailsComponent implements OnInit {
   }
 
 
-  url: string = 'student';
+  url: string = 'vehicle';
   usersList: Array<VEHICLE>
-  student: VEHICLE = undefined
+  vehicle: VEHICLE = undefined
   myForm: FormGroup;
  
 
   createForm() {
     this.myForm = this.formBuilder.group({
-      vehicleName: new FormControl(this.student ? this.student.vehicleName: '', Validators.required),
-      cityOfTravel: new FormControl(this.student ? this.student.cityOfTravel : '', Validators.required),
-      vehicleNumber: new FormControl(this.student ? this.student.vehicleNumber : '', Validators.required),
-      dateStart: new FormControl(this.student? this.student.dateStart : '',Validators.required),
-      driverName: new FormControl(this.student? this.student.driverName : '',Validators.required),
-      driverNumber: new FormControl(this.student? this.student.driverNumber : '',Validators.required),
-      startingMeter: new FormControl(this.student? this.student.startingMeter : '',Validators.required),
-      endingMeter: new FormControl(this.student? this.student.endingMeter : ''),
-      totalToday: new FormControl(this.student? this.myForm.controls['endingMeter'].value() - this.myForm.controls['startingMeter'].value() : '')
+      vehicleName: new FormControl(this.vehicle ? this.vehicle.vehicleName: '', Validators.required),
+      cityOfTravel: new FormControl(this.vehicle ? this.vehicle.cityOfTravel : '', Validators.required),
+      vehicleNumber: new FormControl(this.vehicle ? this.vehicle.vehicleNumber : '', Validators.required),
+      dateStart: new FormControl(this.vehicle? this.vehicle.dateStart : '',Validators.required),
+      driverName: new FormControl(this.vehicle? this.vehicle.driverName : '',Validators.required),
+      driverNumber: new FormControl(this.vehicle? this.vehicle.driverNumber : '',Validators.required),
+      startingMeter: new FormControl(this.vehicle? this.vehicle.startingMeter : '',Validators.required),
+      endingMeter: new FormControl(this.vehicle? this.vehicle.endingMeter : ''),
+      totalToday: new FormControl(this.vehicle? this.myForm.controls['endingMeter'].value() - this.myForm.controls['startingMeter'].value() : '')
     });
   }
 
@@ -158,15 +158,15 @@ export class VehicleDetailsComponent implements OnInit {
     })
   }
 
- addStudent(student: VEHICLE): void {
-     if (this.student)
-      student.id = this.student.id
-    this.httpClientService.post(this.url, student).subscribe(res => {    
+ addStudent(Vehicles: VEHICLE): void {
+     if (this.vehicle)
+     Vehicles.id = this.vehicle.id
+    this.httpClientService.post(this.url, Vehicles).subscribe(res => {    
       let response = JSON.parse(JSON.stringify(res))    
       this.getData();
       this.myForm.reset();
      this.showAlert = false;
-      this.student = undefined
+      this.vehicle = undefined
     }, error => {
     })
   }
@@ -180,24 +180,24 @@ export class VehicleDetailsComponent implements OnInit {
   }
 
 
-  edit(student: VEHICLE): void {
-    console.log(student)
+  edit(Vehicle: VEHICLE): void {
+    console.log(Vehicle)
     this.showAlert = true;
-    this.student = student
-    this.myForm.controls['vehicleNumber'].setValue(this.student.vehicleNumber)
-    this.myForm.controls['vehicleName'].setValue(this.student.vehicleName)
-    this.myForm.controls['cityOfTravel'].setValue(this.student.cityOfTravel)
-    this.myForm.controls['dateStart'].setValue(this.student.dateStart)
-    this.myForm.controls['driverName'].setValue(this.student.driverName)
-    this.myForm.controls['driverNumber'].setValue(this.student.driverNumber)
-    this.myForm.controls['startingMeter'].setValue(this.student.startingMeter)
-    this.myForm.controls['endingMeter'].setValue(this.student.endingMeter)
-    this.myForm.controls['totalMeter'].setValue(this.student.totalMeter)
+    this.vehicle = Vehicle
+    this.myForm.controls['vehicleNumber'].setValue(this.vehicle.vehicleNumber)
+    this.myForm.controls['vehicleName'].setValue(this.vehicle.vehicleName)
+    this.myForm.controls['cityOfTravel'].setValue(this.vehicle.cityOfTravel)
+    this.myForm.controls['dateStart'].setValue(this.vehicle.dateStart)
+    this.myForm.controls['driverName'].setValue(this.vehicle.driverName)
+    this.myForm.controls['driverNumber'].setValue(this.vehicle.driverNumber)
+    this.myForm.controls['startingMeter'].setValue(this.vehicle.startingMeter)
+    this.myForm.controls['endingMeter'].setValue(this.vehicle.endingMeter)
+    this.myForm.controls['totalMeter'].setValue(this.vehicle.totalMeter)
   
   }
 
-  delete(student: VEHICLE): void {
-    this.httpClientService.delete(this.url, student).subscribe(res => {
+  delete(Vehicle: VEHICLE): void {
+    this.httpClientService.delete(this.url, Vehicle).subscribe(res => {
       let data = JSON.parse(JSON.stringify(res))
       this.getData()
     }, error => {

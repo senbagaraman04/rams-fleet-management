@@ -16,33 +16,33 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController(value = "/student")
+@RestController(value = "/vehicle")
 public class VehicleController {
 
 	@Autowired
-	private VehicleService studentService;
+	private VehicleService vehicleService;
 
 	@GetMapping
 	public ResponseEntity<Response> get() {
 		return ResponseEntity.status(HttpStatus.OK)
-				.body(new Response(studentService.get(), new Date()));
+				.body(new Response(vehicleService.get(), new Date()));
 	}
 
 	@PostMapping
-	public ResponseEntity<Response> save(@RequestBody Vehicle student) {
+	public ResponseEntity<Response> save(@RequestBody Vehicle veh) {
 		return ResponseEntity.status(HttpStatus.OK)
-				.body(new Response(studentService.save(student), new Date()));
+				.body(new Response(vehicleService.save(veh), new Date()));
 	}
 
 	@PutMapping
-	public ResponseEntity<Response> update(@RequestBody Vehicle student) {
+	public ResponseEntity<Response> update(@RequestBody Vehicle veh) {
 		return ResponseEntity.status(HttpStatus.OK)
-				.body(new Response(studentService.save(student), new Date()));
+				.body(new Response(vehicleService.save(veh), new Date()));
 	}
 
 	@DeleteMapping
 	public ResponseEntity<Response> delete(@RequestParam("id") int id) {
-		studentService.delete(id);
+	    vehicleService.delete(id);
 		return ResponseEntity.status(HttpStatus.OK)
 				.body(new Response(true, new Date()));
 	}

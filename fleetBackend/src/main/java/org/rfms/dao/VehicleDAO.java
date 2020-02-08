@@ -11,17 +11,17 @@ import org.springframework.stereotype.Repository;
 public class VehicleDAO {
 
 	@Autowired
-	private VehicleRepository studentRepository;
+	private VehicleRepository vehicleRepository;
 
 	public List<Vehicle> get() {
-		return studentRepository.findAll();
+		return vehicleRepository.findAll();
 	}
 
 	public Vehicle save(Vehicle student) {
-		return studentRepository.save(student);
+		return vehicleRepository.save(student);
 	}
 
 	public void delete(int id) {
-		studentRepository.deleteById(id);
+	    vehicleRepository.deleteById(id);
 	}
 }

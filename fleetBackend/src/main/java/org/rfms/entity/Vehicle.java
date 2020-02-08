@@ -25,6 +25,10 @@ public class Vehicle implements Serializable {
     private int  endingMeter;
     private int  totalMeter;
     private String cityOfTravel;
+    private String firstName;
+    private String lastName;
+    private String email;
+
     
     /**
      * @return the vehicleName
@@ -166,10 +170,7 @@ public class Vehicle implements Serializable {
     {
         this.id = id;
     }
-    private String firstName;
-    private String lastName;
-    private String email;
-
+   
 // Generate Getters and Setters...
     
 
