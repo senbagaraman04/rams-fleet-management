@@ -1,0 +1,20 @@
+name: Angular
+ 
+on: 
+  push:
+    branches: release_v_2020_2_1   
+
+jobs:
+  build:   
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+     
+    - name: Setup Node.js for use with actions
+      uses: actions/setup-node@v1
+      #installs Node Module to run the code
+    - name: Install dependencies
+      run: npm install
+      #Builds the angular application using node and in production mode
+    - name: Build
+      run: npm run build -- --prod 
