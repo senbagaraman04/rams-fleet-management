@@ -57,7 +57,10 @@ export class VehicleDetailsComponent implements OnInit {
       cityOfTravel: new FormControl(this.vehicle ? this.vehicle.cityOfTravel : '', Validators.required),
       vehicleNumber: new FormControl(this.vehicle ? this.vehicle.vehicleNumber : '', Validators.required),
       dateStart: new FormControl(this.vehicle? this.vehicle.dateStart : '',Validators.required),
-      driverName: new FormControl(this.vehicle? this.vehicle.driverName : '',Validators.required),
+      driverName: new FormControl(this.vehicle? this.vehicle.driverName : '',Validators.required)      
+    });
+
+    this.myForm = this.formBuilder.group({
       driverNumber: new FormControl(this.vehicle? this.vehicle.driverNumber : '',Validators.required),
       startingMeter: new FormControl(this.vehicle? this.vehicle.startingMeter : '',Validators.required),
       endingMeter: new FormControl(this.vehicle? this.vehicle.endingMeter : ''),
