@@ -27,10 +27,9 @@ export class VehicleDetailsComponent implements OnInit {
   vehicle_data: any;
   dataSource = new MatTableDataSource(this.vehicle_data);
   @ViewChild(MatSort, {static: true}) sort: MatSort;
-  @ViewChild('f', {static:true}) ngForm;
+  @ViewChild('form', {static:true}) ngForm;
   
-  constructor( 
-          private dialog: MatDialog,
+  constructor( private dialog: MatDialog,
           private httpClientService:HttpClientService,
           private formBuilder: FormBuilder
            ) 
@@ -52,8 +51,6 @@ export class VehicleDetailsComponent implements OnInit {
  
 
   createForm() {
-   
-
     this.myForm = this.formBuilder.group({
       vehicleName: new FormControl(this.vehicle ? this.vehicle.vehicleName: '', Validators.required),
       cityOfTravel: new FormControl(this.vehicle ? this.vehicle.cityOfTravel : '', Validators.required),
@@ -126,6 +123,7 @@ export class VehicleDetailsComponent implements OnInit {
     }, error => {
     })
   }
+ 
 
   handleResponse(response): void {
      this.vehicle_data = response;
