@@ -22,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientService } from './service/http-client.service';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { HighchartsChartModule } from 'highcharts-angular';
+import { DriverDetailsComponent } from './admin-panel/driver-details/driver-details.component';
 
 
 const appRoutes: Routes = [
@@ -36,7 +37,8 @@ const appRoutes: Routes = [
    {path: 'admin', component: AdminPanelComponent,
   children:[   
     {path: 'vehicledetails', component: VehicleDetailsComponent},
-     {path: 'chart', component: ChartComponent}
+     {path: 'chart', component: ChartComponent},
+     {path: 'driver', component: DriverDetailsComponent}
   ]
   
 
@@ -53,7 +55,8 @@ const appRoutes: Routes = [
     VehicleDetailsComponent,
     TermsComponent,
     ChartComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    DriverDetailsComponent
   ],
   imports: [
     BrowserModule,
