@@ -1,91 +1,31 @@
 <p> Driver Details</p>
 <div class="row">
     <div class="col-sm-4" style="background-color:lavender;">
-        <br>
-        <mat-card >
-                <mat-card-title> Test Driver Name	</mat-card-title>
-         
-         <mat-card-content>	
-           +91 90000000000<br>
-            Rams Corporation <br>
-            Rs. 456/day
-        </mat-card-content>
+     
+  <div *ngFor="let driver of driverDetailsList">
+      <br>
+      <mat-card>
+          <mat-card-title>
+              {{driver.name}}
+          </mat-card-title>
+          <mat-card-subtitle>
+              {{driver.phoneNumber}}
+          </mat-card-subtitle>
+          <mat-card-content>
+              License Number: {{driver.licenseNumber}} <br>
+              Batch Number: {{driver.batchNumber}} <br>
+              Salary: {{driver.salary}}
+          </mat-card-content>
+      </mat-card>
+      <br>
+  </div>
 
-        <mat-card-footer> 
-            License Number: 00 000 AAA BBBB<br>
-             Batch Number: 000 888 99999 </mat-card-footer>
-           
-        </mat-card>
-
-        <br>
-        <mat-card >
-                <mat-card-title> Test Driver Name	</mat-card-title>
-         
-         <mat-card-content>	
-           +91 90000000000<br>
-            Rams Corporation <br>
-            Rs. 456/day
-        </mat-card-content>
-
-        <mat-card-footer> 
-            License Number: 00 000 AAA BBBB<br>
-             Batch Number: 000 888 99999 </mat-card-footer>
-           
-        </mat-card>
-
-        <br>
-        <mat-card >
-                <mat-card-title> Test Driver Name	</mat-card-title>
-         
-         <mat-card-content>	
-           +91 90000000000<br>
-            Rams Corporation <br>
-            Rs. 456/day
-        </mat-card-content>
-
-        <mat-card-footer> 
-            License Number: 00 000 AAA BBBB<br>
-             Batch Number: 000 888 99999 </mat-card-footer>
-           
-        </mat-card>
-
-        <br>
-        <mat-card >
-                <mat-card-title> Test Driver Name	</mat-card-title>
-         
-         <mat-card-content>	
-           +91 90000000000<br>
-            Rams Corporation <br>
-            Rs. 456/day
-        </mat-card-content>
-
-        <mat-card-footer> 
-            License Number: 00 000 AAA BBBB<br>
-             Batch Number: 000 888 99999 </mat-card-footer>
-           
-        </mat-card>
-
-    <br>
+          
    
     </div>
     
     <div class="col-sm-4" style="background-color:lavenderblush;">
-        <br>
-        <mat-card>
-                <mat-card-title> Test Driver Name	</mat-card-title>
-         
-         <mat-card-content>	
-           +91 90000000000<br>
-            Rams Corporation <br>
-            Rs. 456/day
-        </mat-card-content>
-
-        <mat-card-footer> 
-            License Number: 00 000 AAA BBBB<br>
-             Batch Number: 000 888 99999 </mat-card-footer>
-           
-        </mat-card>
-        <br>
+       
     
     </div>
     
