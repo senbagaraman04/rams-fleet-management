@@ -7,7 +7,7 @@ import { NgwWowModule } from 'ngx-wow';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { RouterModule, Routes } from '@angular/router'
 import { NgVerticalTimelineModule  } from 'ng-vertical-timeline';
-
+import {DemoMaterialModule} from './material-module';
 import { MatCardModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule } from '@angular/material';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { VehicleDetailsComponent } from './admin-panel/vehicle-details/vehicle-details.component';
@@ -79,7 +79,7 @@ const appRoutes: Routes = [
     MatDialogModule,
     HttpClientModule,
     HighchartsChartModule,
-    
+    DemoMaterialModule,
     RouterModule.forRoot(appRoutes)
 
   ],
