@@ -2,12 +2,13 @@ package org.rfms.controller;
 
 import java.util.Date;
 
-import org.rfms.entity.Vehicle;
+import org.rfms.entity.Driver;
 import org.rfms.model.Response;
-import org.rfms.service.VehicleService;
+import org.rfms.service.DriverService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,34 +16,33 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-@RestController(value = "/vehicle")
-public class VehicleController {
+@Controller("/driver")
+public class DriverController {
 
 	@Autowired
-	private VehicleService vehicleService;
+	private DriverService driverService;
 
-	@GetMapping("get")
+	@GetMapping
 	public ResponseEntity<Response> get() {
 		return ResponseEntity.status(HttpStatus.OK)
-				.body(new Response(vehicleService.get(), new Date()));
+				.body(new Response(driverService.get(), new Date()));
 	}
 
-	@PostMapping("save")
-	public ResponseEntity<Response> save(@RequestBody Vehicle veh) {
+	@PostMapping
+	public ResponseEntity<Response> save(@RequestBody Driver driv) {
 		return ResponseEntity.status(HttpStatus.OK)
-				.body(new Response(vehicleService.save(veh), new Date()));
+				.body(new Response(driverService.save(driv), new Date()));
 	}
 
-	@PutMapping("update")
-	public ResponseEntity<Response> update(@RequestBody Vehicle veh) {
+	@PutMapping
+	public ResponseEntity<Response> update(@RequestBody Driver driv) {
 		return ResponseEntity.status(HttpStatus.OK)
-				.body(new Response(vehicleService.save(veh), new Date()));
+				.body(new Response(driverService.save(driv), new Date()));
 	}
 
-	@DeleteMapping("delete")
+	@DeleteMapping
 	public ResponseEntity<Response> delete(@RequestParam("id") int id) {
-	    vehicleService.delete(id);
+	    driverService.delete(id);
 		return ResponseEntity.status(HttpStatus.OK)
 				.body(new Response(true, new Date()));
 	}
