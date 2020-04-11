@@ -5,6 +5,9 @@
 # rams-fleet-management
 A Simple fleet management system, which provides end to end solutions for the owner and helps in optimizing the cost and managing the fleet with a clean book.
 
+# Branch
+This branch holds the backend code
+
 # Release Notes
 
 # Version : 2020.2.1
