@@ -1,27 +1,27 @@
-package org.rfms.service;
+// package org.rfms.service;
 
-import java.util.List;
+// import java.util.List;
 
-import org.rfms.dao.*;
-import org.rfms.entity.Driver;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+// import org.rfms.dao.*;
+// import org.rfms.entity.Driver;
+// import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.stereotype.Service;
 
-@Service
-public class DriverService {
+// @Service
+// public class DriverService {
 
-	@Autowired
-	private DriverDAO driverDAO;
+// 	@Autowired
+// 	private DriverDAO driverDAO;
 
-	public List<Driver> get() {
-		return driverDAO.get();
-	}
+// 	public List<Driver> get() {
+// 		return driverDAO.get();
+// 	}
 
-	public Driver save(Driver driver) {
-		return driverDAO.save(driver);
-	}
+// 	public Driver save(Driver driver) {
+// 		return driverDAO.save(driver);
+// 	}
 
-	public void delete(int id) {
-	    driverDAO.delete(id);
-	}
-}
+// 	public void delete(int id) {
+// 	    driverDAO.delete(id);
+// 	}
+// }
