@@ -1,15 +1,12 @@
-import { Component, OnInit, ViewChild, TemplateRef, ɵConsole } from '@angular/core';
-import {MatTableModule, MatTableDataSource} from '@angular/material'
-import { DataSource } from '@angular/cdk/table';
-import { NgModule } from '@angular/core';
+import { Component, OnInit, ViewChild, } from '@angular/core';
+import {MatTableDataSource} from '@angular/material'
 import {MatSort} from '@angular/material/sort';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
-import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatDialog} from '@angular/material/dialog';
 
 import {VEHICLE} from '../../shared/vehicle';
 
 import { HttpClientService } from '../../service/http-client.service';
-import { validateHorizontalPosition } from '@angular/cdk/overlay';
 
 
 @Component({
@@ -65,7 +62,6 @@ export class VehicleDetailsComponent implements OnInit {
   }
 
  submitForm(data) {
-   console.log(data)
      if (data.valid)
       this.addStudent(data.value)
   }

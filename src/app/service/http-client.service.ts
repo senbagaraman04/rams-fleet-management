@@ -13,7 +13,7 @@ export class HttpClientService {
   constructor( private httpClient: HttpClient) { }
 
  
-  serverUrl: string = "https://ramsbackend.herokuapp.com/api/"
+  serverUrl: string = "http://localhost:8080/api";
 
   get(url: string): Observable<any> {
       return this.httpClient.get(this.serverUrl + url);
