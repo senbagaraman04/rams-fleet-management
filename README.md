@@ -23,15 +23,15 @@ OS: win32 x64
 
 
 
-Package                      Version
-------------------------------------------------------
-@angular-devkit/architect    0.803.4
-@angular-devkit/core         8.3.4
-@angular-devkit/schematics   8.3.4
-@schematics/angular          8.3.4
-@schematics/update           0.803.4
-rxjs                         6.4.0
-Springframework Boot         2.1.9.RELEASE
-Java Version                 1.8
+|Package                    |  Version|
+| --------------            | ------- |
+|@angular-devkit/architect|    0.803.4|
+|@angular-devkit/core     |    8.3.4|
+|@angular-devkit/schematics  | 8.3.4|
+|@schematics/angular  |        8.3.4|
+|@schematics/update   |        0.803.4|
+|rxjs                  |       6.4.0|
+|Springframework Boot  |       2.1.9.RELEASE|
+|Java Version          |       1.8|
 
  
