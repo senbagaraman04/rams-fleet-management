@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {VEHICLE} from '../shared/vehicle'
+import { environment } from '../../environments/environment';
 
 import { Observable, of } from 'rxjs';
 
@@ -13,7 +14,7 @@ export class HttpClientService {
   constructor( private httpClient: HttpClient) { }
 
  
-  serverUrl: string = "https://ramsbackend.herokuapp.com/api/"
+  serverUrl: string = environment.baseURL;//"https://ramsbackend.herokuapp.com/api/"
 
   get(url: string): Observable<any> {
       return this.httpClient.get(this.serverUrl + url);
