@@ -1,15 +1,13 @@
-table {
-    width:100%;
-}
+
 
 .mat-cell, .mat-header-cell {
     border: 1px solid black;
     text-align : center
 }
 
-tr:hover {
-  background-color:#DF4500;
-}
+//tr:hover {
+//  background-color:#DF4500;
+//}
 
 .blinking{
     animation:blinkingText 5s infinite;
@@ -26,3 +24,25 @@ img {
     width: 26px;
     margin-left: 19px;
 }
+
+
+table {
+    width: 90%;
+   table-layout: fixed;
+   margin-left: 30px;
+  }
+  
+ 
+
+
+  .pageHeader {
+      margin-left: 20px;
+  }
+
+
+  .addButton {
+   color: whitesmoke;
+    background-color: teal;
+    border-color: teal;
+
+  }

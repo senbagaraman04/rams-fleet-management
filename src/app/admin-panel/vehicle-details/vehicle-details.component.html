@@ -1,4 +1,4 @@
-<div class="mainModule" >
+<!-- <div class="mainModule" >
         <div>
             <div class="row">
            <div class="col-md-3">
@@ -133,10 +133,101 @@
               </div>
               
             </div>
+  </div> -->
+
+
+
+
+
+  <div class="vehicleDetailsMainDiv">
+
+
+<div class="pageHeader">
+       <strong>Vehicle Details</strong>
+       <div class="modal-body row">
+              <div class="col-md-3">
+                            <p>No of Vehicle(s) :  20</p>            
+                            <p>Kilometer Covered: 87782<small>km</small></p>
+              </div>
+
+              <div class="col-md-3">
+                            <p>Available Driver(s) :  10</p>            
+                            <p>Petrol Consumed: 87292 <small>km</small></p>
+              </div>
+
+              <div class="col-md-3">
+                            <p><img src="../../../assets/icons/warning-blink.gif">Vehicles service:  3</p>            
+                         <span>
+                                   <img src="../../../assets/icons/warning-blink.gif">Insurance Renewal: 2
+                         </span>  
+              </div>
+
+              <div class="col-md-3">
+                          <button class="btn  addButton" > Add Vehicle </button> 
+              </div>
+       </div>
+     
+</div>
+
+<!--Table Starts here-->
+<hr>
+<table class="ml-2 " mat-table [dataSource] = "dataSource" class="mat-elevation-z8" matSort>
+               
+              <ng-container matColumnDef = "vehicleNumber" >
+                     <mat-header-cell *matHeaderCellDef mat-sort-header> Vehicle Number</mat-header-cell>
+                     <mat-cell *matCellDef = "let element"> {{element.vehicleNumber}}</mat-cell>
+               </ng-container>
+              <ng-container matColumnDef = "vehicleName">
+                 <mat-header-cell *matHeaderCellDef mat-sort-header> Vehicle Name</mat-header-cell>
+                 <mat-cell *matCellDef = "let element"> {{element.vehicleName}}</mat-cell>
+              </ng-container>
+              <ng-container matColumnDef = "date">
+                     <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+                     <mat-cell *matCellDef = "let element"> {{element.dateStart}}</mat-cell>
+              </ng-container>
+
+              <ng-container matColumnDef = "cityOfTravel">
+                     <mat-header-cell *matHeaderCellDef >City</mat-header-cell>
+                     <mat-cell *matCellDef = "let element"> {{element.cityOfTravel}}</mat-cell>
+              </ng-container>
+
+              <ng-container matColumnDef = "drivername">
+                     <mat-header-cell *matHeaderCellDef> Driver Name</mat-header-cell>
+                     <mat-cell *matCellDef = "let element"> {{element.driverName}}</mat-cell>
+              </ng-container>
+              <ng-container matColumnDef = "drivernumber">
+                     <mat-header-cell *matHeaderCellDef> Driver Number</mat-header-cell>
+                     <mat-cell *matCellDef = "let element"> {{element.driverNumber}}</mat-cell>
+              </ng-container>
+              <ng-container matColumnDef = "start">
+                     <mat-header-cell *matHeaderCellDef>Starting Meter</mat-header-cell>
+                     <mat-cell *matCellDef = "let element"> {{element.startingMeter}}</mat-cell>
+              </ng-container>
+              <ng-container matColumnDef = "end">
+                     <mat-header-cell *matHeaderCellDef>Ending Meter</mat-header-cell>
+                     <mat-cell *matCellDef = "let element"> {{element.endingMeter}}</mat-cell>
+              </ng-container>
+              <ng-container matColumnDef = "total">
+                     <mat-header-cell *matHeaderCellDef>Total Travelled Today</mat-header-cell>
+                     <mat-cell *matCellDef = "let element"> {{element.endingMeter - element.startingMeter }}</mat-cell>
+              </ng-container>
+              <ng-container matColumnDef = "action">
+                  <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+                  <mat-cell *matCellDef = "let element"> 
+                                <img alt="edit" src="https://img.icons8.com/officel/16/000000/edit.png" value="edit" (click)=edit(element) tool-tip="Edit">
+                                <img alt="delete" src="https://img.icons8.com/dusk/64/000000/delete-row.png" value="delete" (click)=delete(element) tool-tip="Delete">
+                        
+                   </mat-cell>
+           </ng-container>             
+
+                <mat-header-row *matHeaderRowDef="displayedColumns" sticky></mat-header-row>
+                <mat-row *matRowDef ="let row; columns: displayedColumns;"></mat-row>
+             </table>
+
+
+<!--/Table ends here-->
+
   </div>
-
-
-
  
   
 
