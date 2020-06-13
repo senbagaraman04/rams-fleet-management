@@ -36,6 +36,17 @@
           <i class="fas fa-money-check"></i>  <p *ngIf="expandMenu"> Service/Insurance </p>  
       </a>
 
+      <a mat-list-item routerLink="about" routerLinkActive="active" >
+          <i class="fas fa-info"></i> <p *ngIf="expandMenu"> About-us </p>  
+      </a>
+
+      <a mat-list-item routerLink="terms" routerLinkActive="active" >
+          <i class="fas fa-asterisk"></i> <p *ngIf="expandMenu"> Terms of use </p>  
+      </a>
+
+      <a mat-list-item class="btn disabled" >
+          <i class="fas fa-sign-out-alt"></i> <p *ngIf="expandMenu"> Logout </p>  
+      </a>
 
     </mat-nav-list>
 

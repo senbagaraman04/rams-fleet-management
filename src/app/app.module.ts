@@ -31,15 +31,17 @@ const appRoutes: Routes = [
   children:[
     { path: '', redirectTo : 'welcome', pathMatch: 'full' },
     { path: 'welcome', component: WelcomeComponent},
-    { path: 'about', component: AboutusComponent },
-   {path: 'terms', component: TermsComponent}
+   
+  
   ]
 },
    {path: 'admin', component: AdminPanelComponent,
   children:[   
     {path: 'vehicledetails', component: VehicleDetailsComponent},
      {path: 'chart', component: ChartComponent},
-     {path: 'driver', component: DriverDetailsComponent}
+     {path: 'driver', component: DriverDetailsComponent},
+     {path: 'terms', component: TermsComponent},
+     {path: 'about', component: AboutusComponent },
   ]
   
 
