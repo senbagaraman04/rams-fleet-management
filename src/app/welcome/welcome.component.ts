@@ -1,6 +1,9 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import  anime from 'animejs';
-//import {anime} from '../../../node_modules/animejs/lib/anime';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-welcome',
@@ -9,11 +12,20 @@ import  anime from 'animejs';
 })
 export class WelcomeComponent implements OnInit, AfterViewInit {
 
-  constructor() { }
+  loginForm :FormGroup;
+  submitted = false;
+  flagsCheck = false;
+  message = "";
+
+
+  constructor(private formBuilder :FormBuilder,private router: Router) { }
 
 
   ngOnInit() {
-    
+    this.loginForm = this.formBuilder.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required]
+  });
   }
 
 
@@ -64,8 +76,29 @@ export class WelcomeComponent implements OnInit, AfterViewInit {
   }
   
 
-  onSubmitClicked() {
-    console.log("OnSubmit button clicked")
+    
+  onSubmit(){
+    this.submitted = true;
+    if(this.loginForm.invalid){
+      return;
+      
+    }
+    console.log("done");
+    
   }
- 
+  get f(){
+    return this.loginForm.controls;
+  }
+
+  checkLogin(){
+    this.flagsCheck = true;
+   if(this.loginForm.controls['username'].value === environment.userName && this.loginForm.controls['password'].value === environment.password){
+     this.message ="login success"
+     this.router.navigate(['/admin/vehicledetails']);    
+
+   }else{
+     this.message ="Username or password is incorrect";
+   }
+
+ }
 }
