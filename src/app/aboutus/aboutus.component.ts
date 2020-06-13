@@ -23,6 +23,13 @@ export class AboutusComponent implements OnInit {
       content: 'Released First version with capable of Adding,Storing, Editing Vehicle Data',
       date: 'Feb-2020',
       icon: 'https://img.icons8.com/nolan/64/baby-app.png'
+    },
+    {
+      id:2,
+      title: 'Release Version  2020.3.1',
+      content: 'Side Menu Updated,Login Authorization, updated UI designs',
+      date: 'July-2020',
+      icon: 'https://img.icons8.com/nolan/64/baby-app.png'
     }
     
   ];

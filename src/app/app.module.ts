@@ -25,20 +25,21 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { DriverDetailsComponent } from './admin-panel/driver-details/driver-details.component';
 
 
+
 const appRoutes: Routes = [
   {path: '', component: HomeComponent,
   children:[
     { path: '', redirectTo : 'welcome', pathMatch: 'full' },
-    { path: 'welcome', component: WelcomeComponent},
-    { path: 'about', component: AboutusComponent },
-   {path: 'terms', component: TermsComponent}
+    { path: 'welcome', component: WelcomeComponent} 
   ]
 },
    {path: 'admin', component: AdminPanelComponent,
   children:[   
     {path: 'vehicledetails', component: VehicleDetailsComponent},
      {path: 'chart', component: ChartComponent},
-     {path: 'driver', component: DriverDetailsComponent}
+     {path: 'driver', component: DriverDetailsComponent},
+     {path: 'terms', component: TermsComponent},
+     {path: 'about', component: AboutusComponent },
   ]
   
 
