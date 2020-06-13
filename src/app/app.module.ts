@@ -30,9 +30,7 @@ const appRoutes: Routes = [
   {path: '', component: HomeComponent,
   children:[
     { path: '', redirectTo : 'welcome', pathMatch: 'full' },
-    { path: 'welcome', component: WelcomeComponent},
-   
-  
+    { path: 'welcome', component: WelcomeComponent} 
   ]
 },
    {path: 'admin', component: AdminPanelComponent,

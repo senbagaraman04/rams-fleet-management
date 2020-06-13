@@ -37,14 +37,14 @@
       </a>
 
       <a mat-list-item routerLink="about" routerLinkActive="active" >
-          <i class="fas fa-info"></i> <p *ngIf="expandMenu"> About-us </p>  
+          <i style="margin-left: 7px;" class="fas fa-info"></i> <p *ngIf="expandMenu"> About-us </p>  
       </a>
 
       <a mat-list-item routerLink="terms" routerLinkActive="active" >
           <i class="fas fa-asterisk"></i> <p *ngIf="expandMenu"> Terms of use </p>  
       </a>
 
-      <a mat-list-item class="btn disabled" >
+      <a mat-list-item routerLink="/" >
           <i class="fas fa-sign-out-alt"></i> <p *ngIf="expandMenu"> Logout </p>  
       </a>
 
@@ -76,7 +76,7 @@
 
   </mat-sidenav>
 
-  <mat-sidenav-content class="ml-10 rightPanel" >
+  <mat-sidenav-content class="ml-10 mt-3 rightPanel" >
 
     
         <router-outlet></router-outlet>
