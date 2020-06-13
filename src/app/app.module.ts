@@ -25,6 +25,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { DriverDetailsComponent } from './admin-panel/driver-details/driver-details.component';
 
 
+
 const appRoutes: Routes = [
   {path: '', component: HomeComponent,
   children:[
