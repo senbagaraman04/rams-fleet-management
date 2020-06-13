@@ -64,6 +64,8 @@ export class WelcomeComponent implements OnInit, AfterViewInit {
   }
   
 
-
+  onSubmitClicked() {
+    console.log("OnSubmit button clicked")
+  }
  
 }
