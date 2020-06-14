@@ -146,26 +146,37 @@
        <strong>Vehicle Details</strong>
        <div class="modal-body row">
               <div class="col-md-3">
-                            <p>No of Vehicle(s) :  20</p>            
-                            <p>Kilometer Covered: 87782<small>km</small></p>
+                            <p>No of Vehicle(s) :  {{totalVehicles}}</p>            
+                            <p>Kilometer Covered: {{totlaKilometer}}<small>km</small></p>
               </div>
 
               <div class="col-md-3">
-                            <p>Available Driver(s) :  10</p>            
-                            <p>Petrol Consumed: 87292 <small>km</small></p>
+                            <p>Available Driver(s) :  {{totalDrivers}}</p>            
+                            <p>Petrol Consumed: {{petrolConsumed}} <small>km</small></p>
               </div>
 
-              <div class="col-md-3">
-                            <p><img src="../../../assets/icons/warning-blink.gif">Vehicles service:  3</p>            
+
+              <!--under construction-->
+
+              <!-- <div class="col-md-3">
+                            <p><img src="../../../assets/icons/warning-blink.gif">Vehicles service:  {{vehicleService}}</p>            
                          <span>
-                                   <img src="../../../assets/icons/warning-blink.gif">Insurance Renewal: 2
+                                   <img src="../../../assets/icons/warning-blink.gif">Insurance Renewal: {{insuranceRenewal}}
                          </span>  
-              </div>
+              </div> -->
 
               <div class="col-md-3">
                           <button class="btn  addButton" > Add Vehicle </button> 
               </div>
        </div>
+
+
+       <div class="modal-body row">
+         <span>
+                     <i class="fas fa-info-circle"> Represential Values. Dont make any decision based on this</i>
+         </span>
+
+              </div>
      
 </div>
 

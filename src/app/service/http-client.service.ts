@@ -10,6 +10,7 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class HttpClientService {
+  
 
   constructor( private httpClient: HttpClient) { }
 
@@ -30,6 +31,13 @@ export class HttpClientService {
 
   delete(url: string, data: VEHICLE): Observable<any> {
       return this.httpClient.delete(this.serverUrl + url, { params: { id: data.id + "" } });
+  }
+
+
+
+
+  getHeaderData() :  Observable<any>  {
+    return this.httpClient.get(this.serverUrl + "getVehicleHeaderDetails")
   }
 
 

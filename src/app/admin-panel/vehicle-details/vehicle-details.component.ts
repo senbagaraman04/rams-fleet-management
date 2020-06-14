@@ -1,15 +1,12 @@
-import { Component, OnInit, ViewChild, TemplateRef, ɵConsole } from '@angular/core';
-import {MatTableModule, MatTableDataSource} from '@angular/material'
-import { DataSource } from '@angular/cdk/table';
-import { NgModule } from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
+import { MatTableDataSource} from '@angular/material'
 import {MatSort} from '@angular/material/sort';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
-import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatDialog} from '@angular/material/dialog';
 
 import {VEHICLE} from '../../shared/vehicle';
 
 import { HttpClientService } from '../../service/http-client.service';
-import { validateHorizontalPosition } from '@angular/cdk/overlay';
 
 
 @Component({
@@ -39,9 +36,11 @@ export class VehicleDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.createForm();
-    this.getData();   
+    this.getData();  
+    this.getHeaderData(); 
     this.dataSource.sort = this.sort;  
   }
+ 
 
 
   url: string = 'vehicle';
@@ -76,6 +75,9 @@ export class VehicleDetailsComponent implements OnInit {
       this.usersList = response.data;
       this.dataSource =new MatTableDataSource(this.usersList);
     })
+
+
+    
   }
 
  addStudent(Vehicles: VEHICLE): void {
@@ -137,6 +139,25 @@ export class VehicleDetailsComponent implements OnInit {
    this.showAlert = !this.showAlert;    
   }
 
+  insuranceRenewal: number;
+  kmCovered: number;
+  totalVehicles: number;
+  petrolConsumed: number;
+  totalDrivers: number;
+  vehicleService : number
+
+  /** Gets the headerInfo data from database for Vehicle Detail page */
+  getHeaderData() {
+    
+    this.httpClientService.getHeaderData().subscribe(response=> {
+      this.totalVehicles = response.totalVehicles;
+      this.kmCovered = response.kmCovered;
+      this.totalDrivers = response.totalDrivers;
+      this.petrolConsumed = response.petrolConsumed;
+      this.vehicleService = response.vehicleService;
+      this.insuranceRenewal = response.insuranceRenewal;
+    });
+  }
 
  
 
