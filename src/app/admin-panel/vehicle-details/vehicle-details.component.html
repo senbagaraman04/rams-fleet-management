@@ -187,56 +187,56 @@
 
        
 <div class="ml-2 col-md-10" *ngIf="showAlert">
-              <form>
+              <form class="was-validated" [formGroup]="myForm"  #form="ngForm">
                             <div  class="form-group row">
                                           <label required for="dateStart" class="col-sm-2 col-form-label">Date </label>
                                           <div class="col-sm-10">
-                                            <input required type="text" class="form-control" id="dateStart" placeholder="Date">
+                                            <input required type="text" class="form-control" formControlName="dateStart" id="dateStart" placeholder="Date">
                                           </div>
                                         </div>
                             <div class="form-group row">
                               <label for="vehicleName" class="col-sm-2 col-form-label">Vehicle Name</label>
                               <div class="col-sm-10">
-                                <input type="text" class="form-control" id="vehicleName" placeholder="Vehicle Name">
+                                <input type="text" class="form-control" formControlName="vehicleName" id="vehicleName" placeholder="Vehicle Name" required>
                               </div>
                             </div>
                             <div class="form-group row">
                               <label for="vehicleNumber" class="col-sm-2 col-form-label">Vehicle Number</label>
                               <div class="col-sm-10">
-                                <input type="text" class="form-control" id="vehicleNumber" placeholder="Vehicle Number">
+                                <input required type="text" class="form-control" formControlName="vehicleNumber" id="vehicleNumber" placeholder="Vehicle Number">
                               </div>
                             </div>
                             <div class="form-group row">
                                           <label for="driverName" class="col-sm-2 col-form-label">Driver Name</label>
                                           <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="driverName" placeholder="Driver Name">
+                                            <input required type="text" class="form-control" formControlName="driverName" id="driverName" placeholder="Driver Name">
                                           </div>
                             </div>
                             <div class="form-group row">
                                           <label for="driverNumber" class="col-sm-2 col-form-label">Driver Number</label>
                                           <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="driverNumber" placeholder="Driver Number">
+                                            <input  required type="text" class="form-control" formControlName="driverNumber" id="driverNumber" placeholder="Driver Number">
                                           </div>
                             </div>
 
                             <div class="form-group row">
-                                          <label for="cityTravel" class="col-sm-2 col-form-label">City Travel</label>
+                                          <label for="cityOfTravel" class="col-sm-2 col-form-label">City Travel</label>
                                           <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="cityTravel" placeholder="City Name">
+                                            <input required type="text" class="form-control" formControlName="cityOfTravel" id="cityOfTravel" placeholder="City Name">
                                           </div>
                             </div>
 
                             <div class="form-group row">
                                           <label for="startingMeter" class="col-sm-2 col-form-label">Starting Meter</label>
                                           <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="startingMeter" placeholder="Starting Meter">
+                                            <input required type="text" class="form-control" formControlName="startingMeter" id="startingMeter" placeholder="Starting Meter">
                                           </div>
                             </div>
 
                             <div class="form-group row">
                                           <label for="endingMeter" class="col-sm-2 col-form-label">Ending  Meter</label>
                                           <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="endingMeter" placeholder="Ending Meter">
+                                            <input required type="text" class="form-control" formControlName="endingMeter" id="endingMeter" placeholder="Ending Meter">
                                           </div>
                             </div>
 

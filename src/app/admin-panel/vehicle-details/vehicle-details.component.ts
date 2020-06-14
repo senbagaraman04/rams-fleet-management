@@ -58,13 +58,14 @@ export class VehicleDetailsComponent implements OnInit {
       driverName: new FormControl(this.vehicle? this.vehicle.driverName : '',Validators.required),
       driverNumber: new FormControl(this.vehicle? this.vehicle.driverNumber : '',Validators.required),
       startingMeter: new FormControl(this.vehicle? this.vehicle.startingMeter : '',Validators.required),
-      endingMeter: new FormControl(this.vehicle? this.vehicle.endingMeter : ''),
-      totalToday: new FormControl(this.vehicle? this.myForm.controls['endingMeter'].value() - this.myForm.controls['startingMeter'].value() : '')
+      endingMeter: new FormControl(this.vehicle? this.vehicle.endingMeter : '')
+     // totalToday: new FormControl(this.vehicle? this.vehicle.startingMeter : '')
     });
   }
 
  submitForm(data) {
    console.log(data)
+   console.log(data.valid)
      if (data.valid)
       this.addStudent(data.value)
   }
@@ -114,7 +115,7 @@ export class VehicleDetailsComponent implements OnInit {
     this.myForm.controls['driverNumber'].setValue(this.vehicle.driverNumber)
     this.myForm.controls['startingMeter'].setValue(this.vehicle.startingMeter)
     this.myForm.controls['endingMeter'].setValue(this.vehicle.endingMeter)
-    this.myForm.controls['totalMeter'].setValue(this.vehicle.totalMeter)
+   // this.myForm.controls['totalMeter'].setValue(this.vehicle.totalMeter)
   
   }
 
