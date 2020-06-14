@@ -1,3 +1,7 @@
+
+![RMS CI](https://github.com/senbagaraman04/rams-fleet-management/workflows/RMS%20CI/badge.svg?branch=deploy_ramsfrontend)
+
+
 # FleetManagement
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.4.
