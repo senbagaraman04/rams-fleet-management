@@ -16,14 +16,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController(value = "/vehicle")
+@RestController
 public class VehicleController {
 
 	@Autowired
 	private VehicleService vehicleService;
 
-	@GetMapping
+	@GetMapping("/vehicle")
 	public ResponseEntity<Response> get() {
+	    System.out.println("Hello");
 		return ResponseEntity.status(HttpStatus.OK)
 				.body(new Response(vehicleService.get(), new Date()));
 	}
