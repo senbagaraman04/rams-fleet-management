@@ -44,8 +44,8 @@ export class VehicleDetailsComponent implements OnInit {
   //   this.mySubscription= interval(5000).subscribe((x =>{
   //     this.getHeaderData(); 
   // }));
-
-  this.getHeaderData(); 
+console.log("Calling from init");
+    this.getHeaderData(); 
     this.dataSource.sort = this.sort;  
   }
  
@@ -72,8 +72,7 @@ export class VehicleDetailsComponent implements OnInit {
   }
 
  submitForm(data) {
-     if (data.valid)
-      this.addStudent(data.value)
+     if (data.valid)  this.addStudent(data.value);
   }
 
   getData(): void {
@@ -95,11 +94,12 @@ export class VehicleDetailsComponent implements OnInit {
       this.getData();
       this.myForm.reset();
      this.showAlert = false;
+     this.getHeaderData();
+
       this.vehicle = undefined
     }, error => {
     })
 
-    this.getHeaderData();
   }
   cancelForm() {
     this.showAlert = false;
@@ -133,6 +133,7 @@ export class VehicleDetailsComponent implements OnInit {
       this.getData()
     }, error => {
     })
+    console.log("delte");
     this.getHeaderData(); 
   }
  
@@ -162,6 +163,7 @@ export class VehicleDetailsComponent implements OnInit {
     
     this.httpClientService.getHeaderData().subscribe(response=> {
       this.totalVehicles = response.totalVehicles;
+      console.log( this.totalVehicles)
       this.kmCovered = response.kmCovered;
       this.totalDrivers = response.totalDrivers;
       this.petrolConsumed = response.petrolConsumed;
