@@ -7,6 +7,7 @@ import {MatDialog} from '@angular/material/dialog';
 import {VEHICLE} from '../../shared/vehicle';
 
 import { HttpClientService } from '../../service/http-client.service';
+import { interval, Subscription} from 'rxjs';
 
 
 @Component({
@@ -25,7 +26,9 @@ export class VehicleDetailsComponent implements OnInit {
   dataSource = new MatTableDataSource(this.vehicle_data);
   @ViewChild(MatSort, {static: true}) sort: MatSort;
   @ViewChild('form', {static:true}) ngForm;
-  
+  mySubscription: Subscription
+
+
   constructor( private dialog: MatDialog,
           private httpClientService:HttpClientService,
           private formBuilder: FormBuilder
@@ -37,7 +40,12 @@ export class VehicleDetailsComponent implements OnInit {
   ngOnInit() {
     this.createForm();
     this.getData();  
-    this.getHeaderData(); 
+   
+  //   this.mySubscription= interval(5000).subscribe((x =>{
+  //     this.getHeaderData(); 
+  // }));
+
+  this.getHeaderData(); 
     this.dataSource.sort = this.sort;  
   }
  
@@ -64,8 +72,6 @@ export class VehicleDetailsComponent implements OnInit {
   }
 
  submitForm(data) {
-   console.log(data)
-   console.log(data.valid)
      if (data.valid)
       this.addStudent(data.value)
   }
@@ -92,6 +98,8 @@ export class VehicleDetailsComponent implements OnInit {
       this.vehicle = undefined
     }, error => {
     })
+
+    this.getHeaderData();
   }
   cancelForm() {
     this.showAlert = false;
@@ -125,6 +133,7 @@ export class VehicleDetailsComponent implements OnInit {
       this.getData()
     }, error => {
     })
+    this.getHeaderData(); 
   }
  
 
@@ -147,8 +156,9 @@ export class VehicleDetailsComponent implements OnInit {
   totalDrivers: number;
   vehicleService : number
 
+
   /** Gets the headerInfo data from database for Vehicle Detail page */
-  getHeaderData() {
+  getHeaderData() {   
     
     this.httpClientService.getHeaderData().subscribe(response=> {
       this.totalVehicles = response.totalVehicles;
