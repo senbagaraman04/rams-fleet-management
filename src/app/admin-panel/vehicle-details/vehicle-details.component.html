@@ -252,8 +252,17 @@
                      </div>
       
 
+
+
+                     
+
+       <div class="mr-3 mb-2 ml-2">
+              <button mat-raised-button  (click)="exportToExcel()">Export as Excel</button>     
+       </div>
+
+
    <!--Table Starts here-->
-       <table *ngIf="!showAlert" class="ml-2 " mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+       <mat-table *ngIf="!showAlert" class="ml-2 mr-2 mat-elevation-z8 " mat-table [dataSource]="dataSource" matSort>
 
               <ng-container matColumnDef="vehicleNumber">
                      <mat-header-cell *matHeaderCellDef mat-sort-header> Vehicle Number</mat-header-cell>
@@ -306,7 +315,8 @@
 
               <mat-header-row *matHeaderRowDef="displayedColumns" sticky></mat-header-row>
               <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-       </table>
+       </mat-table>
+
 
        <!--/Table ends here-->
 

@@ -8,6 +8,7 @@ import {VEHICLE} from '../../shared/vehicle';
 
 import { HttpClientService } from '../../service/http-client.service';
 import { interval, Subscription} from 'rxjs';
+import * as XLSX from 'xlsx';
 
 
 @Component({
@@ -80,6 +81,7 @@ console.log("Calling from init");
       let response = JSON.parse(JSON.stringify(res));
       this.usersList = response.data;
       this.dataSource =new MatTableDataSource(this.usersList);
+      console.log(this.dataSource.data);
     })
 
 
@@ -142,7 +144,7 @@ console.log("Calling from init");
      this.vehicle_data = response;
      this.dataSource = new MatTableDataSource(this.vehicle_data);
      this.dataSource.sort = this.sort;
-
+     console.log(this.dataSource.data);
   }
  
 
@@ -160,7 +162,7 @@ console.log("Calling from init");
 
   /** Gets the headerInfo data from database for Vehicle Detail page */
   getHeaderData() {   
-    
+
     this.httpClientService.getHeaderData().subscribe(response=> {
       console.log(response);
       this.totalVehicles = response.totalVehicles;
@@ -172,6 +174,16 @@ console.log("Calling from init");
     });
   }
 
+
+  exportToExcel() {
+    console.log(this.dataSource.data);
+    const workSheet = XLSX.utils.json_to_sheet(this.dataSource.data);
+    const workBook: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workBook, workSheet, 'rmsVehicleData');
+    XLSX.writeFile(workBook, 'rmsVehicleData.xlsx');
+
+
+  }
  
 
   
