@@ -12,7 +12,11 @@ public interface SqlCurdRepository extends CrudRepository<TableHeaderDetails, Lo
 {
 
  
-   @Query( value = "SELECT count(vehicle_number)  FROM Student",nativeQuery=true)
+   @Query( value = "SELECT count(vehicleNumber)  FROM Student",nativeQuery=true)
     int findTotalVehicles();
+  
+  
+    @Query( value = "SELECT sum(totalMeter)  FROM Student",nativeQuery=true)
+    int kilometerCovered();
     
  }

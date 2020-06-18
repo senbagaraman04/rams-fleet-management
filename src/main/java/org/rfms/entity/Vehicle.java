@@ -138,6 +138,7 @@ public class Vehicle implements Serializable {
      */
     public void setTotalMeter()
     {
+        System.out.printf("Printing the values Ending and starting meter: {0},{1}" +  getEndingMeter(), getStartingMeter());
         this.totalMeter = getEndingMeter() - getStartingMeter();
     }
     /**

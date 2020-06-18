@@ -27,7 +27,10 @@ public class VehicleHeaderController
         
         int totalCount = serviceCrud.findTotalVehicles();
         
+        int kilometerCovered = serviceCrud.kilometerCovered();
+        System.out.println(kilometerCovered);
         tableHeaderDetails.setTotalVehicles(totalCount);
+        tableHeaderDetails.setKmCovered(kilometerCovered);
         
         
         System.out.println("Returned List<TableHeaderDetails>, leaving the method");
