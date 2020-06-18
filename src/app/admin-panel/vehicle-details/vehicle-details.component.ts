@@ -162,8 +162,8 @@ console.log("Calling from init");
   getHeaderData() {   
     
     this.httpClientService.getHeaderData().subscribe(response=> {
+      console.log(response);
       this.totalVehicles = response.totalVehicles;
-      console.log( this.totalVehicles)
       this.kmCovered = response.kmCovered;
       this.totalDrivers = response.totalDrivers;
       this.petrolConsumed = response.petrolConsumed;
