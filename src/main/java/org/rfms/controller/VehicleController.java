@@ -29,14 +29,14 @@ public class VehicleController {
 				.body(new Response(vehicleService.get(), new Date()));
 	}
 
-	@PostMapping
+	@PostMapping("/vehicle")
 	public ResponseEntity<Response> save(@RequestBody Vehicle veh) {
 	    System.out.println("Save Method of Vehicle Controller");
 		return ResponseEntity.status(HttpStatus.OK)
 				.body(new Response(vehicleService.save(veh), new Date()));
 	}
 
-	@PutMapping
+	@PutMapping("/vehicle")
 	public ResponseEntity<Response> update(@RequestBody Vehicle veh) {
 	    
 	    System.out.println("Update Method of Vehicle Controller");
@@ -44,7 +44,7 @@ public class VehicleController {
 				.body(new Response(vehicleService.save(veh), new Date()));
 	}
 
-	@DeleteMapping
+	@DeleteMapping("/vehicle")
 	public ResponseEntity<Response> delete(@RequestParam("id") int id) {
 	    vehicleService.delete(id);
 	       System.out.println("Delete Method of Vehicle Controller");
