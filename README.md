@@ -43,21 +43,21 @@ This branch holds up the code for frontend.
 # Version : 2020.3.1
 
 # Updates:
-  Remodified Sidenav.
-  Added Login Screen.
-  Removed header and footer.
-  Disabled all unwanted page links.
-  Remodified Vehicle details page.
-  Improved code Quality 
-  Fixed the existing bugs.
+  * Remodified Sidenav.
+  * Added Login Screen.
+  * Removed header and footer.
+  * Disabled all unwanted page links.
+  * Remodified Vehicle details page.
+  * Improved code Quality 
+  * Fixed the existing bugs.
 
 # Version : 2020.2.1
 
 # Updates:
- User can able to add the vehicles from front end.
- User can edit the added vehicle data.
- User can Modify and delete the entered values present in the table.
- All data are synced with backend in realtime .
+ * User can able to add the vehicles from front end.
+ * User can edit the added vehicle data.
+ * User can Modify and delete the entered values present in the table.
+ * All data are synced with backend in realtime .
 
 # Technologies Used:
 
