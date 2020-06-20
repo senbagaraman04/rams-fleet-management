@@ -52,6 +52,27 @@
 	<groupId>org.springframework.data</groupId>
 	<artifactId>spring-data-jpa</artifactId>
 </dependency>
+
+<!--
+	The spring-boot-starter-test is the primary dependency that contains the
+    majority of elements required for our tests.
+    The H2 DB is our in-memory database. It eliminates the need for configuring
+	 and starting an actual database for test purposes.
+-->
+
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-test</artifactId>
+    <scope>test</scope>
+    <version>2.1.6.RELEASE</version>
+</dependency>
+<dependency>
+    <groupId>com.h2database</groupId>
+    <artifactId>h2</artifactId>
+    <scope>test</scope>
+    <version>1.4.194</version>
+</dependency> 
+
 	</dependencies>
 	<build>
 		<plugins>
@@ -60,6 +81,16 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		
+		  <testResources>
+                <testResource>
+                    <directory>src/main/java</directory>
+                </testResource>
+    </testResources>
+    
+    
 	</build>
+	
+	
 
 </project>
