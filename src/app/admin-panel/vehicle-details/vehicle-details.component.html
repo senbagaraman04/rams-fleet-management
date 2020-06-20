@@ -1,4 +1,6 @@
-<!-- <div class="mainModule" >
+<!--
+       
+       <div class="mainModule" >
         <div>
             <div class="row">
            <div class="col-md-3">
@@ -133,103 +135,189 @@
               </div>
               
             </div>
-  </div> -->
+  </div> 
+
+-->-
 
 
 
+<div class="vehicleDetailsMainDiv">
 
 
-  <div class="vehicleDetailsMainDiv">
+       <div class="pageHeader">
+              <strong>Vehicle Details</strong>
+              <div class="modal-body row">
+                     <div class="col-md-3">
+                            <p>No of Vehicle(s) : {{totalVehicles}}</p>
+                            <p>Kilometer Covered: {{kmCovered}}<small>km</small></p>
+                     </div>
+
+                     <div class="col-md-3">
+                            <p>Available Driver(s) : {{totalDrivers}}</p>
+                            <p>Petrol Consumed: {{petrolConsumed}} <small>km</small></p>
+                     </div>
 
 
-<div class="pageHeader">
-       <strong>Vehicle Details</strong>
-       <div class="modal-body row">
-              <div class="col-md-3">
-                            <p>No of Vehicle(s) :  20</p>            
-                            <p>Kilometer Covered: 87782<small>km</small></p>
-              </div>
+                     <!--under construction-->
 
-              <div class="col-md-3">
-                            <p>Available Driver(s) :  10</p>            
-                            <p>Petrol Consumed: 87292 <small>km</small></p>
-              </div>
-
-              <div class="col-md-3">
-                            <p><img src="../../../assets/icons/warning-blink.gif">Vehicles service:  3</p>            
+                     <!-- <div class="col-md-3">
+                            <p><img src="../../../assets/icons/warning-blink.gif">Vehicles service:  {{vehicleService}}</p>            
                          <span>
-                                   <img src="../../../assets/icons/warning-blink.gif">Insurance Renewal: 2
+                                   <img src="../../../assets/icons/warning-blink.gif">Insurance Renewal: {{insuranceRenewal}}
                          </span>  
+              </div> -->
+
+                     <div class="col-md-3">
+                            <button class="btn  addButton" (click)="alertMethod()"> Add Vehicle </button>
+                     </div>
               </div>
 
-              <div class="col-md-3">
-                          <button class="btn  addButton" > Add Vehicle </button> 
+
+              <div class="modal-body row">
+                     <span>
+                            <i class="fas fa-info-circle"> Represential Values. Dont make any decision based on this</i>
+                     </span>
+
               </div>
+
        </div>
-     
-</div>
 
-<!--Table Starts here-->
-<hr>
-<table class="ml-2 " mat-table [dataSource] = "dataSource" class="mat-elevation-z8" matSort>
-               
-              <ng-container matColumnDef = "vehicleNumber" >
+    
+       <hr>
+
+       
+<div class="ml-2 col-md-10" *ngIf="showAlert">
+              <form class="was-validated" [formGroup]="myForm"  #form="ngForm">
+                            <div  class="form-group row">
+                                          <label required for="dateStart" class="col-sm-2 col-form-label">Date </label>
+                                          <div class="col-sm-10">
+                                            <input required type="text" class="form-control" formControlName="dateStart" id="dateStart" placeholder="Date">
+                                          </div>
+                                        </div>
+                            <div class="form-group row">
+                              <label for="vehicleName" class="col-sm-2 col-form-label">Vehicle Name</label>
+                              <div class="col-sm-10">
+                                <input type="text" class="form-control" formControlName="vehicleName" id="vehicleName" placeholder="Vehicle Name" required>
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <label for="vehicleNumber" class="col-sm-2 col-form-label">Vehicle Number</label>
+                              <div class="col-sm-10">
+                                <input required type="text" class="form-control" formControlName="vehicleNumber" id="vehicleNumber" placeholder="Vehicle Number">
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                                          <label for="driverName" class="col-sm-2 col-form-label">Driver Name</label>
+                                          <div class="col-sm-10">
+                                            <input required type="text" class="form-control" formControlName="driverName" id="driverName" placeholder="Driver Name">
+                                          </div>
+                            </div>
+                            <div class="form-group row">
+                                          <label for="driverNumber" class="col-sm-2 col-form-label">Driver Number</label>
+                                          <div class="col-sm-10">
+                                            <input  required type="text" class="form-control" formControlName="driverNumber" id="driverNumber" placeholder="Driver Number">
+                                          </div>
+                            </div>
+
+                            <div class="form-group row">
+                                          <label for="cityOfTravel" class="col-sm-2 col-form-label">City Travel</label>
+                                          <div class="col-sm-10">
+                                            <input required type="text" class="form-control" formControlName="cityOfTravel" id="cityOfTravel" placeholder="City Name">
+                                          </div>
+                            </div>
+
+                            <div class="form-group row">
+                                          <label for="startingMeter" class="col-sm-2 col-form-label">Starting Meter</label>
+                                          <div class="col-sm-10">
+                                            <input required type="text" class="form-control" formControlName="startingMeter" id="startingMeter" placeholder="Starting Meter">
+                                          </div>
+                            </div>
+
+                            <div class="form-group row">
+                                          <label for="endingMeter" class="col-sm-2 col-form-label">Ending  Meter</label>
+                                          <div class="col-sm-10">
+                                            <input required type="text" class="form-control" formControlName="endingMeter" id="endingMeter" placeholder="Ending Meter">
+                                          </div>
+                            </div>
+
+                           
+                            <div class="form-group row">
+                              <div class="col-sm-10">
+                                <button type="submit" (click)="submitForm(myForm)" class="mr-3 btn  addButton waves-effect waves-light">Submit</button>
+                                <button type="submit" (click)="cancelForm()"  class= "btn addButton waves-effect waves-light">Clear</button> 
+                            </div>
+                            </div>
+                          </form>
+       
+                     </div>
+      
+
+
+
+                     
+
+       <div class="mr-3 mb-2 ml-2">
+              <button mat-raised-button  (click)="exportToExcel()">Export as Excel</button>     
+       </div>
+
+
+   <!--Table Starts here-->
+       <mat-table *ngIf="!showAlert" class="ml-2 mr-2 mat-elevation-z8 " mat-table [dataSource]="dataSource" matSort>
+
+              <ng-container matColumnDef="vehicleNumber">
                      <mat-header-cell *matHeaderCellDef mat-sort-header> Vehicle Number</mat-header-cell>
-                     <mat-cell *matCellDef = "let element"> {{element.vehicleNumber}}</mat-cell>
-               </ng-container>
-              <ng-container matColumnDef = "vehicleName">
-                 <mat-header-cell *matHeaderCellDef mat-sort-header> Vehicle Name</mat-header-cell>
-                 <mat-cell *matCellDef = "let element"> {{element.vehicleName}}</mat-cell>
+                     <mat-cell *matCellDef="let element"> {{element.vehicleNumber}}</mat-cell>
               </ng-container>
-              <ng-container matColumnDef = "date">
+              <ng-container matColumnDef="vehicleName">
+                     <mat-header-cell *matHeaderCellDef mat-sort-header> Vehicle Name</mat-header-cell>
+                     <mat-cell *matCellDef="let element"> {{element.vehicleName}}</mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="date">
                      <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
-                     <mat-cell *matCellDef = "let element"> {{element.dateStart}}</mat-cell>
+                     <mat-cell *matCellDef="let element"> {{element.dateStart}}</mat-cell>
               </ng-container>
 
-              <ng-container matColumnDef = "cityOfTravel">
-                     <mat-header-cell *matHeaderCellDef >City</mat-header-cell>
-                     <mat-cell *matCellDef = "let element"> {{element.cityOfTravel}}</mat-cell>
+              <ng-container matColumnDef="cityOfTravel">
+                     <mat-header-cell *matHeaderCellDef>City</mat-header-cell>
+                     <mat-cell *matCellDef="let element"> {{element.cityOfTravel}}</mat-cell>
               </ng-container>
 
-              <ng-container matColumnDef = "drivername">
+              <ng-container matColumnDef="drivername">
                      <mat-header-cell *matHeaderCellDef> Driver Name</mat-header-cell>
-                     <mat-cell *matCellDef = "let element"> {{element.driverName}}</mat-cell>
+                     <mat-cell *matCellDef="let element"> {{element.driverName}}</mat-cell>
               </ng-container>
-              <ng-container matColumnDef = "drivernumber">
+              <ng-container matColumnDef="drivernumber">
                      <mat-header-cell *matHeaderCellDef> Driver Number</mat-header-cell>
-                     <mat-cell *matCellDef = "let element"> {{element.driverNumber}}</mat-cell>
+                     <mat-cell *matCellDef="let element"> {{element.driverNumber}}</mat-cell>
               </ng-container>
-              <ng-container matColumnDef = "start">
+              <ng-container matColumnDef="start">
                      <mat-header-cell *matHeaderCellDef>Starting Meter</mat-header-cell>
-                     <mat-cell *matCellDef = "let element"> {{element.startingMeter}}</mat-cell>
+                     <mat-cell *matCellDef="let element"> {{element.startingMeter}}</mat-cell>
               </ng-container>
-              <ng-container matColumnDef = "end">
+              <ng-container matColumnDef="end">
                      <mat-header-cell *matHeaderCellDef>Ending Meter</mat-header-cell>
-                     <mat-cell *matCellDef = "let element"> {{element.endingMeter}}</mat-cell>
+                     <mat-cell *matCellDef="let element"> {{element.endingMeter}}</mat-cell>
               </ng-container>
-              <ng-container matColumnDef = "total">
+              <ng-container matColumnDef="total">
                      <mat-header-cell *matHeaderCellDef>Total Travelled Today</mat-header-cell>
-                     <mat-cell *matCellDef = "let element"> {{element.endingMeter - element.startingMeter }}</mat-cell>
+                     <mat-cell *matCellDef="let element"> {{element.endingMeter - element.startingMeter }}</mat-cell>
               </ng-container>
-              <ng-container matColumnDef = "action">
-                  <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
-                  <mat-cell *matCellDef = "let element"> 
-                                <img alt="edit" src="https://img.icons8.com/officel/16/000000/edit.png" value="edit" (click)=edit(element) tool-tip="Edit">
-                                <img alt="delete" src="https://img.icons8.com/dusk/64/000000/delete-row.png" value="delete" (click)=delete(element) tool-tip="Delete">
-                        
-                   </mat-cell>
-           </ng-container>             
+              <ng-container matColumnDef="action">
+                     <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+                     <mat-cell *matCellDef="let element">
+                            <img alt="edit" src="https://img.icons8.com/officel/16/000000/edit.png" value="edit"
+                                   (click)=edit(element) tool-tip="Edit">
+                            <img alt="delete" src="https://img.icons8.com/dusk/64/000000/delete-row.png" value="delete"
+                                   (click)=delete(element) tool-tip="Delete">
 
-                <mat-header-row *matHeaderRowDef="displayedColumns" sticky></mat-header-row>
-                <mat-row *matRowDef ="let row; columns: displayedColumns;"></mat-row>
-             </table>
+                     </mat-cell>
+              </ng-container>
 
-
-<!--/Table ends here-->
-
-  </div>
- 
-  
+              <mat-header-row *matHeaderRowDef="displayedColumns" sticky></mat-header-row>
+              <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+       </mat-table>
 
 
-  
+       <!--/Table ends here-->
+
+</div>
