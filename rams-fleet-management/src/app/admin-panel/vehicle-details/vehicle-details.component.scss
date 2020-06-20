@@ -1,0 +1,38 @@
+
+
+::ng-deep .mat-cell, .mat-header-cell {
+    border: 1px solid teal;
+    text-align : center
+   
+}
+
+
+
+
+
+img {
+    width: 26px;
+    margin-left: 19px;
+}
+
+
+table {
+    width: 90%;
+   table-layout: fixed;
+   margin-left: 30px;
+  }
+  
+ 
+
+
+  .pageHeader {
+      margin-left: 20px;
+  }
+
+
+  .addButton {
+   color: whitesmoke;
+    background-color: teal;
+    border-color: teal;
+
+  }
