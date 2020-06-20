@@ -48,8 +48,9 @@ This branch holds up the code for frontend.
   * Removed header and footer.
   * Disabled all unwanted page links.
   * Remodified Vehicle details page.
-  * Improved code Quality 
+  * Improved code quality for both Angular and Java
   * Fixed the existing bugs.
+  * Added Feature to Export Vehicle details table
 
 # Version : 2020.2.1
 
