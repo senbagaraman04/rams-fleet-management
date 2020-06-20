@@ -71,7 +71,7 @@
     <artifactId>h2</artifactId>
     <scope>test</scope>
     <version>1.4.194</version>
-</dependency>
+</dependency> 
 
 	</dependencies>
 	<build>
@@ -81,6 +81,16 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		
+		  <testResources>
+                <testResource>
+                    <directory>src/main/java</directory>
+                </testResource>
+    </testResources>
+    
+    
 	</build>
+	
+	
 
 </project>
