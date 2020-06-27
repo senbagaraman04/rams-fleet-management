@@ -5,9 +5,9 @@ name: RMS CI
 
 on:
   push:
-    branches: [ deploy_ramsfrontend ]
+    branches: [ deploy_ramsfrontend, dev_rmsfront ]
   pull_request:
-    branches: [ deploy_ramsfrontend ]
+    branches: [ deploy_ramsfrontend, dev_rmsfront ]
 
 jobs:
   build:   
@@ -21,3 +21,7 @@ jobs:
       #Builds the angular application using node and in production mode
     - name: Build
       run: npm run build -- --prod 
+    - name: Download a Build Artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: rmsFronEnd
