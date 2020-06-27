@@ -26,8 +26,4 @@ jobs:
       #Builds the angular application using node and in production mode
     - name: Build
       run: npm run build -- --prod 
-    - name: Create Issue Branch
-      uses: robvanderleek/create-issue-branch@master
-      env:
-       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
    
