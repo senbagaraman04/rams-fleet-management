@@ -8,7 +8,10 @@ on:
     branches: [ deploy_ramsfrontend, dev_rmsfront ]
   pull_request:
     branches: [ deploy_ramsfrontend, dev_rmsfront ]
-
+  issues:
+        types: [assigned]
+  issue_comment:
+        types: [created]
 jobs:
   build:   
     runs-on: ubuntu-latest
@@ -18,10 +21,13 @@ jobs:
       #installs Node Module to run the code
     - name: Install dependencies
       run: npm install
+    - name: TypeScript compiler
+      uses: iCrawl/action-tsc@v1
       #Builds the angular application using node and in production mode
     - name: Build
       run: npm run build -- --prod 
-    - name: Download a Build Artifact
-      uses: actions/download-artifact@v2
-      with:
-        name: rmsFronEnd
+    - name: Create Issue Branch
+      uses: robvanderleek/create-issue-branch@master
+      env:
+       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+   
