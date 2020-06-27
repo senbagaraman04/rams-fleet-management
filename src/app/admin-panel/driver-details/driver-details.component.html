@@ -1,32 +1,111 @@
-<p> Driver Details</p>
-<div class="row">
-    <div class="col-sm-4" style="background-color:lavender;">
-     
-  <div *ngFor="let driver of driverDetailsList">
-      <br>
-      <mat-card>
-          <mat-card-title>
-              {{driver.name}}
-          </mat-card-title>
-          <mat-card-subtitle>
-              {{driver.phoneNumber}}
-          </mat-card-subtitle>
-          <mat-card-content>
-              License Number: {{driver.licenseNumber}} <br>
-              Batch Number: {{driver.batchNumber}} <br>
-              Salary: {{driver.salary}}
-          </mat-card-content>
-      </mat-card>
-      <br>
-  </div>
+  <div class="ml-2 driverDetailsMainDiv">
 
-          
-   
-    </div>
-    
-    <div class="col-sm-4" style="background-color:lavenderblush;">
-       
-    
-    </div>
-    
+
+    <div class=" ml-3 pageHeader">
+        <strong>Driver  Details</strong>
+
+        <div class="modal-body row">
+               <div class="col-md-3">
+                      <p>Available Driver(s) : {{totalVehicles}}</p>
+                     
+               </div>
+
+               <div class="col-md-3">
+                   <button class="btn addButton"> Add Driver </button>
+               </div>
+
+            
+        </div>
+
+
+        <div class="modal-body row">
+               <span>
+                      <i class="fas fa-info-circle"> Represential Values. Don't make any decision based on this</i>
+               </span>
+
+        </div>
+
+ </div>
+
+<hr>
+
+<div class="bodyPart">
+
+        <div class=" ml-2 alert alert-primary" role="alert" *ngIf="formResponse">
+                 {{formResponseText}}
+                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+              </div>
+
+    <div class="ml-2 col-md-10" >
+        <form class="was-validated" [formGroup]="myForm"  #form="ngForm">
+
+                 
+
+                      <div class="form-group row">
+                        <label for="batchNumber" class="col-sm-2 col-form-label">Batch Number</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" formControlName="batchNumber" id="batchNumber" placeholder="batchNumber" required>
+                        </div>
+                      </div>
+
+
+                      <div class="form-group row">
+                                    <label for="driverName" class="col-sm-2 col-form-label">Driver Name</label>
+                                    <div class="col-sm-10">
+                                      <input required type="text" class="form-control" formControlName="driverName" id="driverName" placeholder="Driver Name">
+                                    </div>
+                      </div>
+
+
+
+                      <div class="form-group row">
+                                    <label for="driverNumber" class="col-sm-2 col-form-label">Driver Number</label>
+                                    <div class="col-sm-10">
+                                      <input  required type="number" class="form-control" formControlName="driverNumber" id="driverNumber" placeholder="Driver Number">
+                                    </div>
+                      </div>
+
+
+                      <div class="form-group row">
+                                    <label for="licenseNumber" class="col-sm-2 col-form-label">License Number</label>
+                                    <div class="col-sm-10">
+                                      <input required type="text" class="form-control" formControlName="licenseNumber" id="licenseNumber" placeholder="licenseNumber">
+                                    </div>
+                      </div>
+
+                   
+
+
+                      <div class="form-group row">
+                            <label for="expiryDateBatch" class="col-sm-2 col-form-label">Expiry Date(Batch)</label>
+                            <div class="col-sm-10">
+                              <input required type="date" class="form-control" formControlName="expiryDateBatch" id="expiryDateBatch" placeholder="Expiry date Batch Number">
+                            </div>
+                      </div>
+
+                        <div class="form-group row">
+                                    <label for="expiryDateLicense" class="col-sm-2 col-form-label">Expiry Date(License)</label>
+                                    <div class="col-sm-10">
+                                      <input required type="date" class="form-control" formControlName="expiryDateLicense" id="expiryDateLicense" placeholder="Expiry date License Number">
+                                    </div>
+                        </div>
+
+                     
+                      <div class="form-group row">
+                        <div class="col-sm-10">
+                          <button type="submit" (click)="submitForm(myForm)" class="mr-3 btn  addButton waves-effect waves-light">Submit</button>
+                          <button type="submit" (click)="cancelForm()"  class= "btn addButton waves-effect waves-light">Clear</button> 
+                      </div>
+                      </div>
+                    </form>
+ 
+               </div>
+
+
+
+</div>
+
+
   </div>

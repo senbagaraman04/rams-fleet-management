@@ -4,7 +4,7 @@ import {MatSort} from '@angular/material/sort';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {MatDialog} from '@angular/material/dialog';
 
-import {VEHICLE} from '../../shared/vehicle';
+import {VEHICLE} from '../../shared/formFields';
 
 import { HttpClientService } from '../../service/http-client.service';
 import { interval, Subscription} from 'rxjs';
@@ -41,11 +41,6 @@ export class VehicleDetailsComponent implements OnInit {
   ngOnInit() {
     this.createForm();
     this.getData();  
-   
-  //   this.mySubscription= interval(5000).subscribe((x =>{
-  //     this.getHeaderData(); 
-  // }));
-console.log("Calling from init");
     this.getHeaderData(); 
     this.dataSource.sort = this.sort;  
   }
