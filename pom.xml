@@ -33,6 +33,19 @@
 		</dependency>
 		
 		<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-webmvc</artifactId>
+</dependency>
+
+  <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        
+	 <!-- 
+	To restart the server evertime there is a code change.
+	 -->	
+		<dependency>
 		
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-devtools</artifactId>

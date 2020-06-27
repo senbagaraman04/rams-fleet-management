@@ -4,8 +4,10 @@ import java.util.Date;
 
 import org.jvnet.staxex.XMLStreamReaderEx;
 import org.jvnet.staxex.XMLStreamWriterEx;
+import org.rfms.entity.Driver;
 import org.rfms.entity.Vehicle;
 import org.rfms.model.Response;
+import org.rfms.service.DriverService;
 import org.rfms.service.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,42 +21,43 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Controller Class to for Vehicle Details Add class
+ * Controller Class to for Driver Details 
  * 
  * @author Senbagaraman Manoharan
  */
 @RestController
-public class VehicleController {
+public class DriverController {
 
 	@Autowired
-	private VehicleService vehicleService;
+	private DriverService driverService;
+	
 
-	@GetMapping("/vehicle")
+	@GetMapping("/driver")
 	public ResponseEntity<Response> get() {
-	    System.out.println("Get Method of Vehicle Controller");
+	    System.out.println("Get Method of Driver Controller");
 		return ResponseEntity.status(HttpStatus.OK)
-				.body(new Response(vehicleService.get(), new Date()));
+				.body(new Response(driverService.get(), new Date()));
 	}
 
-	@PostMapping("/vehicle")
-	public ResponseEntity<Response> save(@RequestBody Vehicle veh) {
-	    System.out.println("Save Method of Vehicle Controller");
+	@PostMapping("/driver")
+	public ResponseEntity<Response> save(@RequestBody Driver veh) {
+	    System.out.println("Save Method of Driver Controller");
 		return ResponseEntity.status(HttpStatus.OK)
-				.body(new Response(vehicleService.save(veh), new Date()));
+				.body(new Response(driverService.save(veh), new Date()));
 	}
 
-	@PutMapping("/vehicle")
-	public ResponseEntity<Response> update(@RequestBody Vehicle veh) {
+	@PutMapping("/driver")
+	public ResponseEntity<Response> update(@RequestBody Driver veh) {
 	    
-	    System.out.println("Update Method of Vehicle Controller");
+	    System.out.println("Update Method of Driver Controller");
 		return ResponseEntity.status(HttpStatus.OK)
-				.body(new Response(vehicleService.save(veh), new Date()));
+				.body(new Response(driverService.save(veh), new Date()));
 	}
 
-	@DeleteMapping("/vehicle")
+	@DeleteMapping("/driver")
 	public ResponseEntity<Response> delete(@RequestParam("id") int id) {
-	    vehicleService.delete(id);
-	       System.out.println("Delete Method of Vehicle Controller");
+	    driverService.delete(id);
+	       System.out.println("Delete Method of Driver Controller");
 
 		return ResponseEntity.status(HttpStatus.OK)
 				.body(new Response(true, new Date()));
