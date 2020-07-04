@@ -1,6 +1,8 @@
 
 ![RMS CI](https://github.com/senbagaraman04/rams-fleet-management/workflows/RMS%20CI/badge.svg?branch=deploy_ramsfrontend)
 
+[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=senbagaraman04_rams-fleet-management)](https://sonarcloud.io/dashboard?id=senbagaraman04_rams-fleet-management)
+
 
 # FleetManagement
 
