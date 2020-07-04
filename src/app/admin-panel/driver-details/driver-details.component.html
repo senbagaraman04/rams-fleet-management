@@ -11,7 +11,7 @@
                </div>
 
                <div class="col-md-3">
-                   <button class="btn addButton"> Add Driver </button>
+                   <button class="btn addButton" (click)="showDriverForm=!showDriverForm"> Add Driver </button>
                </div>
 
             
@@ -27,9 +27,12 @@
 
  </div>
 
+
+ 
+
 <hr>
 
-<div class="bodyPart">
+<div class="formDiv">
 
         <div class=" ml-2 alert alert-primary" role="alert" *ngIf="formResponse">
                  {{formResponseText}}
@@ -38,7 +41,7 @@
                       </button>
               </div>
 
-    <div class="ml-2 col-md-10" >
+    <div class="ml-2 col-md-10" *ngIf="showDriverForm">
         <form class="was-validated" [formGroup]="myForm"  #form="ngForm">
 
                  
@@ -96,15 +99,68 @@
                       <div class="form-group row">
                         <div class="col-sm-10">
                           <button type="submit" (click)="submitForm(myForm)" class="mr-3 btn  addButton waves-effect waves-light">Submit</button>
-                          <button type="submit" (click)="cancelForm()"  class= "btn addButton waves-effect waves-light">Clear</button> 
+                          <button type="submit" (click)="cancelForm();"  class= "btn addButton waves-effect waves-light">Clear</button> 
                       </div>
                       </div>
-                    </form>
+        </form>
  
-               </div>
+     </div>
 
 
 
+
+
+
+
+</div>
+
+<!--Driver Details Table goes here-->
+<div class="DetailsPart" *ngIf="!showDriverForm">
+
+
+  <mat-table  class="ml-2 mr-2 mat-elevation-z8 " mat-table [dataSource]="dataSource" matSort>
+
+    <ng-container matColumnDef="driverName">
+           <mat-header-cell *matHeaderCellDef mat-sort-header> Driver Name</mat-header-cell>
+           <mat-cell *matCellDef="let element"> {{element.driverName}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="driverNumber">
+           <mat-header-cell *matHeaderCellDef mat-sort-header> Driver Number</mat-header-cell>
+           <mat-cell *matCellDef="let element"> {{element.driverNumber}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="licenseNumber">
+           <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+           <mat-cell *matCellDef="let element"> {{element.licenseNumber}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="batchNumber">
+           <mat-header-cell *matHeaderCellDef>City</mat-header-cell>
+           <mat-cell *matCellDef="let element"> {{element.batchNumber}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="expiryDateLicense">
+           <mat-header-cell *matHeaderCellDef> Driver Name</mat-header-cell>
+           <mat-cell *matCellDef="let element"> {{element.expiryDateLicense}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="expiryDateBatch">
+           <mat-header-cell *matHeaderCellDef> Driver Number</mat-header-cell>
+           <mat-cell *matCellDef="let element"> {{element.expiryDateBatch}}</mat-cell>
+    </ng-container>
+   
+    <ng-container matColumnDef="action">
+           <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+           <mat-cell *matCellDef="let element">
+                  <img alt="edit" src="https://img.icons8.com/officel/16/000000/edit.png" value="edit"
+                         (click)=edit(element) tool-tip="Edit">
+                  <img alt="delete" src="https://img.icons8.com/dusk/64/000000/delete-row.png" value="delete"
+                         (click)=delete(element) tool-tip="Delete">
+
+           </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns" sticky></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
 </div>
 
 

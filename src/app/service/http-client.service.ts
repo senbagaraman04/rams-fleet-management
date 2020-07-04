@@ -42,5 +42,12 @@ export class HttpClientService {
     return this.httpClient.post(this.serverUrl + url, data);
  }
 
+ getDriverData(url: string): Observable<any> {
+  return this.httpClient.get(this.serverUrl + url);
+}
+
+deleteDriverData(url: string, data: DRIVER): Observable<any> {
+  return this.httpClient.delete(this.serverUrl + url, { params: { id: data.id + "" } });
+}
 
 }
