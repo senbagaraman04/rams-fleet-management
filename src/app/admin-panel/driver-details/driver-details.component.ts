@@ -61,8 +61,8 @@ export class DriverDetailsComponent implements OnInit {
 
  /**Control to add driver data to database */
  addDriverDetails(Drivers: DRIVER): void {
-  if (this.driver)
-   Drivers.id = this.driver.id;
+  if (this.driver) {  Drivers.id = this.driver.id; }
+
    this.httpClientService.postDriverData(this.url, Drivers).subscribe(res => {    
    this.getData();
    this.myForm.reset();

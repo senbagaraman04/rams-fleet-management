@@ -84,8 +84,8 @@ export class VehicleDetailsComponent implements OnInit {
   }
 
  addStudent(Vehicles: VEHICLE): void {
-     if (this.vehicle)
-     Vehicles.id = this.vehicle.id
+     if (this.vehicle) {
+     Vehicles.id = this.vehicle.id }
     this.httpClientService.post(this.url, Vehicles).subscribe(res => {    
       let response = JSON.parse(JSON.stringify(res))    
       this.getData();
