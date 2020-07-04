@@ -7,7 +7,7 @@ import {MatDialog} from '@angular/material/dialog';
 import {VEHICLE} from '../../shared/formFields';
 
 import { HttpClientService } from '../../service/http-client.service';
-import { interval, Subscription} from 'rxjs';
+import {  Subscription} from 'rxjs';
 import * as XLSX from 'xlsx';
 
 

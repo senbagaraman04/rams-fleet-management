@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import {VEHICLE, DRIVER} from '../shared/formFields'
 import { environment } from '../../environments/environment';
 
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
