@@ -150,10 +150,8 @@
     <ng-container matColumnDef="action">
            <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
            <mat-cell *matCellDef="let element">
-                  <img alt="edit" src="https://img.icons8.com/officel/16/000000/edit.png" value="edit"
-                         (click)=edit(element) tool-tip="Edit">
-                  <img alt="delete" src="https://img.icons8.com/dusk/64/000000/delete-row.png" value="delete"
-                         (click)=delete(element) tool-tip="Delete">
+                  <img (click)=edit(element) alt="EditTableDetail" src="https://img.icons8.com/officel/16/000000/edit.png" value="edit">
+                  <img  (click)=delete(element) alt="EditTableDetail" src="https://img.icons8.com/dusk/64/000000/delete-row.png" value="delete">
 
            </mat-cell>
     </ng-container>
