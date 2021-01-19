@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {VEHICLE} from '../shared/vehicle'
+import {VEHICLE, DRIVER} from '../shared/formFields'
 import { environment } from '../../environments/environment';
 
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -33,12 +33,21 @@ export class HttpClientService {
       return this.httpClient.delete(this.serverUrl + url, { params: { id: data.id + "" } });
   }
 
-
-
-
   getHeaderData() :  Observable<any>  {
     return this.httpClient.get(this.serverUrl + "getVehicleHeaderDetails")
   }
 
+
+  postDriverData(url: string, data: DRIVER): Observable<any> {
+    return this.httpClient.post(this.serverUrl + url, data);
+ }
+
+ getDriverData(url: string): Observable<any> {
+  return this.httpClient.get(this.serverUrl + url);
+}
+
+deleteDriverData(url: string, data: DRIVER): Observable<any> {
+  return this.httpClient.delete(this.serverUrl + url, { params: { id: data.id + "" } });
+}
 
 }

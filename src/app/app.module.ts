@@ -17,12 +17,12 @@ import {MatSortModule, MatDialogModule} from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { TermsComponent } from './terms/terms.component';
 import { ChartComponent } from './admin-panel/chart/chart.component';
-import { HighchartsChartComponent } from 'highcharts-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientService } from './service/http-client.service';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { DriverDetailsComponent } from './admin-panel/driver-details/driver-details.component';
+import { ServiceInsuranceComponent } from './admin-panel/service-insurance/service-insurance.component';
 
 
 
@@ -57,7 +57,8 @@ const appRoutes: Routes = [
     TermsComponent,
     ChartComponent,
     WelcomeComponent,
-    DriverDetailsComponent
+    DriverDetailsComponent,
+    ServiceInsuranceComponent
   ],
   imports: [
     BrowserModule,
