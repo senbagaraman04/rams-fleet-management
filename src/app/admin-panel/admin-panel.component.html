@@ -1,12 +1,11 @@
-
-
-
- <mat-sidenav-container autosize>
+<mat-sidenav-container autosize>
   <mat-sidenav  mode="side" disableClose="true" opened="true" [fixedInViewport]="true"  [@expandMenuBar]="expandMenu ? 'open': 'closed'">
 
-
-    <mat-nav-list >
+    <mat-nav-list>
      
+     <a mat-list-item routerLink="dashboard" routerLinkActive="active" >
+        <span class="fas fa-tachometer-alt"></span> <p *ngIf="expandMenu"> Fleet Dashboard </p>       
+      </a>
 
       <a mat-list-item routerLink="vehicledetails" routerLinkActive="active" >
         <span class="fas fa-truck-moving"></span> <p *ngIf="expandMenu"> Vehicle Details </p>       

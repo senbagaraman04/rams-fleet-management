@@ -18,20 +18,19 @@ export class AboutusComponent implements OnInit {
       icon: '/assets/images/takeoff.svg'
     },
     {
-      id:1,
+      id: 1,
       title: 'Release Version  2020.2.1',
       content: 'Released First version with capable of Adding,Storing, Editing Vehicle Data',
       date: 'Feb-2020',
       icon: 'https://img.icons8.com/nolan/64/baby-app.png'
     },
     {
-      id:2,
+      id: 2,
       title: 'Release Version  2020.3.1',
       content: 'Side Menu Updated,Login Authorization, updated UI designs',
       date: 'July-2020',
       icon: 'https://img.icons8.com/nolan/64/baby-app.png'
     }
-    
   ];
 
   ngOnInit() {

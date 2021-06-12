@@ -27,8 +27,8 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   ]
 })
 export class AdminPanelComponent implements OnInit {
- 
-  expandMenu : boolean = false;
+
+  expandMenu  = false;
   constructor() { }
 
   ngOnInit() {

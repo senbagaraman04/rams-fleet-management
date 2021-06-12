@@ -23,6 +23,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { DriverDetailsComponent } from './admin-panel/driver-details/driver-details.component';
 import { ServiceInsuranceComponent } from './admin-panel/service-insurance/service-insurance.component';
+import { DashboardComponent } from './admin-panel/dashboard/dashboard.component';
 
 
 
@@ -58,7 +59,8 @@ const appRoutes: Routes = [
     ChartComponent,
     WelcomeComponent,
     DriverDetailsComponent,
-    ServiceInsuranceComponent
+    ServiceInsuranceComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
