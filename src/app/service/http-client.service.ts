@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {VEHICLE, DRIVER} from '../shared/formFields'
+import {VEHICLE, DRIVER} from '../shared/formFields';
 import { environment } from '../../environments/environment';
 
 import { Observable } from 'rxjs';
@@ -10,12 +10,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class HttpClientService {
-  
+
 
   constructor( private httpClient: HttpClient) { }
 
- 
-  serverUrl: string = environment.baseURL;//"https://ramsbackend.herokuapp.com/api/"
+
+  serverUrl: string = environment.baseURL;
 
   get(url: string): Observable<any> {
       return this.httpClient.get(this.serverUrl + url);
@@ -30,11 +30,11 @@ export class HttpClientService {
   }
 
   delete(url: string, data: VEHICLE): Observable<any> {
-      return this.httpClient.delete(this.serverUrl + url, { params: { id: data.id + "" } });
+      return this.httpClient.delete(this.serverUrl + url, { params: { id: data.id + '' } });
   }
 
-  getHeaderData() :  Observable<any>  {
-    return this.httpClient.get(this.serverUrl + "getVehicleHeaderDetails")
+  getHeaderData(): Observable<any>  {
+    return this.httpClient.get(this.serverUrl + 'getVehicleHeaderDetails');
   }
 
 
@@ -47,7 +47,7 @@ export class HttpClientService {
 }
 
 deleteDriverData(url: string, data: DRIVER): Observable<any> {
-  return this.httpClient.delete(this.serverUrl + url, { params: { id: data.id + "" } });
+  return this.httpClient.delete(this.serverUrl + url, { params: { id: data.id + '' } });
 }
 
 }
