@@ -8,9 +8,9 @@
   import org.mockito.InjectMocks;
   import org.mockito.Mock;
   import org.mockito.Mockito;
-  import org.rfms.repository.SqlCurdRepository;
-  import org.rfms.repository.TableHeaderDetails;
-  import org.springframework.boot.test.context.SpringBootTest;
+import org.rfms.entity.TableHeaderDetails;
+import org.rfms.repository.SqlCurdRepository;
+import org.springframework.boot.test.context.SpringBootTest;
   import org.springframework.test.context.ActiveProfiles;
   import org.springframework.test.context.junit4.SpringRunner;
   

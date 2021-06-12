@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "student")
+@Table(name = "vehicle")
 public class Vehicle implements Serializable {
 
     private static final long serialVersionUID = 1681261145191719508L;
@@ -169,8 +169,5 @@ public class Vehicle implements Serializable {
     {
         this.id = id;
     }
-   
-
-
-    
+      
 }

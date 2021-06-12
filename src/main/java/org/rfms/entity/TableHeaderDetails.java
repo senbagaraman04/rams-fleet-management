@@ -1,4 +1,4 @@
-package org.rfms.repository;
+package org.rfms.entity;
 
 import javax.persistence.Embeddable;
 import javax.persistence.Entity;
