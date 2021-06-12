@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import  anime from 'animejs';
+import anime from 'animejs';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
@@ -12,13 +12,13 @@ import { Router } from '@angular/router';
 })
 export class WelcomeComponent implements OnInit, AfterViewInit {
 
-  loginForm :FormGroup;
+  loginForm: FormGroup;
   submitted = false;
   flagsCheck = false;
-  message = "";
+  message = '';
 
 
-  constructor(private formBuilder :FormBuilder,private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private router: Router) { }
 
 
   ngOnInit() {
@@ -32,16 +32,18 @@ export class WelcomeComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
 
- var current = null; 
+ let current = null;
 
+ // tslint:disable-next-line: only-arrow-functions
  document.querySelector('#email').addEventListener('focus', function(e) {
-    if (current) current.pause();
-     current = <any>anime({targets: 'path', strokeDashoffset: { value: 0, duration: 700,easing: 'easeOutQuart'},
-                         strokeDasharray: { value: '240 1386', duration: 700,easing: 'easeOutQuart' } });
+    if (current) { current.pause(); }
+    current =  anime({targets: 'path', strokeDashoffset: { value: 0, duration: 700, easing: 'easeOutQuart'},
+                         strokeDasharray: { value: '240 1386', duration: 700, easing: 'easeOutQuart' } }) as any;
   });
 
-  document.querySelector('#password').addEventListener('focus', function(e) {
-    if (current) current.pause();
+ // tslint:disable-next-line: only-arrow-functions
+ document.querySelector('#password').addEventListener('focus', function(e) {
+    if (current) { current.pause(); }
     current = anime({
       targets: 'path',
       strokeDashoffset: {
@@ -57,8 +59,9 @@ export class WelcomeComponent implements OnInit, AfterViewInit {
     });
   });
 
-  document.querySelector('#submit').addEventListener('focus', function(e) {
-    if (current) current.pause();
+ // tslint:disable-next-line: only-arrow-functions
+ document.querySelector('#submit').addEventListener('focus', function(e) {
+    if (current) { current.pause(); }
     current = anime({
       targets: 'path',
       strokeDashoffset: {
@@ -74,30 +77,31 @@ export class WelcomeComponent implements OnInit, AfterViewInit {
     });
   });
   }
-  
 
-    
-  onSubmit(){
+
+
+  onSubmit() {
     this.submitted = true;
-    if(this.loginForm.invalid){
+    if (this.loginForm.invalid) {
       return;
-      
+
     }
-    console.log("done");
-    
+    console.log('done');
+
   }
-  get f(){
+  get f() {
     return this.loginForm.controls;
   }
 
-  checkLogin(){
+  checkLogin() {
     this.flagsCheck = true;
-   if(this.loginForm.controls['username'].value === environment.userName && this.loginForm.controls['password'].value === environment.password){
-     this.message ="login success"
-     this.router.navigate(['/admin/vehicledetails']);    
+    if (this.loginForm.controls.username.value === environment.userName &&
+          this.loginForm.controls.password.value === environment.password) {
+     this.message = 'login success';
+     this.router.navigate(['/admin/dashboard']);
 
-   }else{
-     this.message ="Username or password is incorrect";
+   } else {
+     this.message = 'Username or password is incorrect';
    }
 
  }

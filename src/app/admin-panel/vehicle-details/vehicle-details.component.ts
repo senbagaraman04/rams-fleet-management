@@ -23,7 +23,7 @@ export class VehicleDetailsComponent implements OnInit {
   constructor( private dialog: MatDialog,
                private httpClientService: HttpClientService,
                private formBuilder: FormBuilder
-              ){
+              ) {
     this.showAlert = false;
   }
 
@@ -104,7 +104,7 @@ export class VehicleDetailsComponent implements OnInit {
     });
 
   }
-  
+
   cancelForm() {
     this.showAlert = false;
     this.myForm.reset();
@@ -121,20 +121,20 @@ export class VehicleDetailsComponent implements OnInit {
     this.vehicle = Vehicle;
     // tslint:disable-next-line: no-string-literal
     this.myForm.controls['vehicleNumber'].setValue(this.vehicle.vehicleNumber);
-    this.myForm.controls['vehicleName'].setValue(this.vehicle.vehicleName);
-    this.myForm.controls['cityOfTravel'].setValue(this.vehicle.cityOfTravel);
-    this.myForm.controls['dateStart'].setValue(this.vehicle.dateStart);
-    this.myForm.controls['driverName'].setValue(this.vehicle.driverName);
-    this.myForm.controls['driverNumber'].setValue(this.vehicle.driverNumber);
-    this.myForm.controls['startingMeter'].setValue(this.vehicle.startingMeter);
-    this.myForm.controls['endingMeter'].setValue(this.vehicle.endingMeter);
+    this.myForm.controls.vehicleName.setValue(this.vehicle.vehicleName);
+    this.myForm.controls.cityOfTravel.setValue(this.vehicle.cityOfTravel);
+    this.myForm.controls.dateStart.setValue(this.vehicle.dateStart);
+    this.myForm.controls.driverName.setValue(this.vehicle.driverName);
+    this.myForm.controls.driverNumber.setValue(this.vehicle.driverNumber);
+    this.myForm.controls.startingMeter.setValue(this.vehicle.startingMeter);
+    this.myForm.controls.endingMeter.setValue(this.vehicle.endingMeter);
    // this.myForm.controls['totalMeter'].setValue(this.vehicle.totalMeter)
-  
+
   }
 
   delete(Vehicle: VEHICLE): void {
     this.httpClientService.delete(this.url, Vehicle).subscribe(res => {
-      let data = JSON.parse(JSON.stringify(res));
+      const data = JSON.parse(JSON.stringify(res));
       this.getData();
     }, error => {
     });
@@ -148,7 +148,7 @@ export class VehicleDetailsComponent implements OnInit {
      this.dataSource = new MatTableDataSource(this.vehicle_data);
      this.dataSource.sort = this.sort;
   }
- 
+
 
   alertMethod() {
    this.showAlert = !this.showAlert;
@@ -158,7 +158,7 @@ export class VehicleDetailsComponent implements OnInit {
   /** Gets the headerInfo data from database for Vehicle Detail page */
   getHeaderData() {
 
-    this.httpClientService.getHeaderData().subscribe(response=> {
+    this.httpClientService.getHeaderData().subscribe(response => {
       console.log(response);
       this.totalVehicles = response.totalVehicles;
       this.kmCovered = response.kmCovered;
@@ -179,7 +179,7 @@ export class VehicleDetailsComponent implements OnInit {
 
 
   }
- 
+
 
 
 }
