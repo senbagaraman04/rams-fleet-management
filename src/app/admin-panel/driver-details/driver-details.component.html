@@ -10,6 +10,7 @@
                      
                </div> 
 
+
                <div class="col-md-3">
                    <button class="btn addButton" (click)="showDriverForm=!showDriverForm"> Add Driver </button>
                </div>
@@ -129,21 +130,21 @@
            <mat-cell *matCellDef="let element"> {{element.driverNumber}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="licenseNumber">
-           <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+           <mat-header-cell *matHeaderCellDef> License Number </mat-header-cell>
            <mat-cell *matCellDef="let element"> {{element.licenseNumber}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="batchNumber">
-           <mat-header-cell *matHeaderCellDef>City</mat-header-cell>
+           <mat-header-cell *matHeaderCellDef>Batch Number</mat-header-cell>
            <mat-cell *matCellDef="let element"> {{element.batchNumber}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="expiryDateLicense">
-           <mat-header-cell *matHeaderCellDef> Driver Name</mat-header-cell>
+           <mat-header-cell *matHeaderCellDef> License Expiry</mat-header-cell>
            <mat-cell *matCellDef="let element"> {{element.expiryDateLicense}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="expiryDateBatch">
-           <mat-header-cell *matHeaderCellDef> Driver Number</mat-header-cell>
+           <mat-header-cell *matHeaderCellDef> Batch Expiry</mat-header-cell>
            <mat-cell *matCellDef="let element"> {{element.expiryDateBatch}}</mat-cell>
     </ng-container>
    

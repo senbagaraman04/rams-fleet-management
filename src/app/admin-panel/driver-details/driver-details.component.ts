@@ -68,7 +68,7 @@ export class DriverDetailsComponent implements OnInit {
    this.myForm.reset();
    this.driver = undefined;
    this.formResponse = true;
-   this.formResponseText = "Driver details has been successfully updated";
+   this.formResponseText = "Driver details has added successfully updated";
  }, error => {
  })
 
