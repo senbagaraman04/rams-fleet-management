@@ -6,21 +6,13 @@
                             <button class="btn  addButton" (click)="alertMethod()"> Add Vehicle </button>
                      </div>
               </div>
-
-
               <div class="modal-body row">
                      <span>
                             <i class="fas fa-info-circle"> Represential Values. Dont make any decision based on this</i>
                      </span>
-
               </div>
-
-       </div>
-
-    
-       <hr>
-
-       
+       </div>    
+       <hr>       
 <div class="ml-2 col-md-10" *ngIf="showAlert">
               <form class="was-validated" [formGroup]="myForm"  #form="ngForm">
                             <div  class="form-group row">
@@ -101,20 +93,26 @@
 
               <ng-container matColumnDef="vehicleNumber">
                      <mat-header-cell *matHeaderCellDef mat-sort-header> Vehicle Number</mat-header-cell>
-                     <mat-cell *matCellDef="let element"> {{element.vehicleNumber}}</mat-cell>
+                     <mat-cell *matCellDef="let element" >
+                            <a href="javascript:void(0)" class="ellipsis" (click)="redirectToDetailsPage(element)">
+                                          {{element.vehicleNumber}}
+                            </a>
+                           
+                            
+                     </mat-cell>
               </ng-container>
               <ng-container matColumnDef="vehicleName">
                      <mat-header-cell *matHeaderCellDef mat-sort-header> Vehicle Name</mat-header-cell>
-                     <mat-cell *matCellDef="let element"> {{element.vehicleName}}</mat-cell>
+                     <mat-cell *matCellDef="let element" > {{element.vehicleName}}</mat-cell>
               </ng-container>
               <ng-container matColumnDef="date">
                      <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
-                     <mat-cell *matCellDef="let element"> {{element.dateStart}}</mat-cell>
+                     <mat-cell *matCellDef="let element" > {{element.dateStart}}</mat-cell>
               </ng-container>
 
               <ng-container matColumnDef="cityOfTravel">
                      <mat-header-cell *matHeaderCellDef>City</mat-header-cell>
-                     <mat-cell *matCellDef="let element"> {{element.cityOfTravel}}</mat-cell>
+                     <mat-cell *matCellDef="let element" > {{element.cityOfTravel}}</mat-cell>
               </ng-container>
 
               <ng-container matColumnDef="drivername">
@@ -123,7 +121,7 @@
               </ng-container>
               <ng-container matColumnDef="drivernumber">
                      <mat-header-cell *matHeaderCellDef> Driver Number</mat-header-cell>
-                     <mat-cell *matCellDef="let element"> {{element.driverNumber}}</mat-cell>
+                     <mat-cell *matCellDef="let element" > {{element.driverNumber}}</mat-cell>
               </ng-container>
               <ng-container matColumnDef="start">
                      <mat-header-cell *matHeaderCellDef>Starting Meter</mat-header-cell>
@@ -131,11 +129,11 @@
               </ng-container>
               <ng-container matColumnDef="end">
                      <mat-header-cell *matHeaderCellDef>Ending Meter</mat-header-cell>
-                     <mat-cell *matCellDef="let element"> {{element.endingMeter}}</mat-cell>
+                     <mat-cell *matCellDef="let element" (click)="redirectToDetailsPage(element)"> {{element.endingMeter}}</mat-cell>
               </ng-container>
               <ng-container matColumnDef="total">
                      <mat-header-cell *matHeaderCellDef>Total Travelled Today</mat-header-cell>
-                     <mat-cell *matCellDef="let element"> {{element.endingMeter - element.startingMeter }}</mat-cell>
+                     <mat-cell *matCellDef="let element" (click)="redirectToDetailsPage(element)"> {{element.endingMeter - element.startingMeter }}</mat-cell>
               </ng-container>
               <ng-container matColumnDef="action">
                      <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>

@@ -25,6 +25,8 @@ import { DriverDetailsComponent } from './admin-panel/driver-details/driver-deta
 import { ServiceInsuranceComponent } from './admin-panel/service-insurance/service-insurance.component';
 import { DashboardComponent } from './admin-panel/dashboard/dashboard.component';
 import { MapComponent } from './admin-panel/dashboard/map/map.component';
+import { VehicleInfoDetailsComponent } from './admin-panel/vehicle-info-details/vehicle-info-details.component';
+import { LocalRowDataStorageService } from './service/local-data-storage.service';
 
 
 
@@ -39,6 +41,7 @@ const appRoutes: Routes = [
   children: [
      {path: 'dashboard', component: DashboardComponent},
      {path: 'vehicledetails', component: VehicleDetailsComponent},
+     {path: 'vehicleinfodetails', component: VehicleInfoDetailsComponent },
      {path: 'chart', component: ChartComponent},
      {path: 'driver', component: DriverDetailsComponent},
      {path: 'terms', component: TermsComponent},
@@ -64,6 +67,7 @@ const appRoutes: Routes = [
     ServiceInsuranceComponent,
     DashboardComponent,
     MapComponent,
+    VehicleInfoDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -90,7 +94,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
 
   ],
-  providers: [HttpClientService],
+  providers: [HttpClientService, LocalRowDataStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

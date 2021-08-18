@@ -9,7 +9,9 @@ import {VEHICLE} from '../../shared/formFields';
 import { HttpClientService } from '../../service/http-client.service';
 import {  Subscription} from 'rxjs';
 import * as XLSX from 'xlsx';
-
+import { Router } from '@angular/router';
+import { LocalRowDataStorageService } from 'src/app/service/local-data-storage.service';
+ 
 
 @Component({
   selector: 'app-vehicle-details',
@@ -22,7 +24,9 @@ export class VehicleDetailsComponent implements OnInit {
 
   constructor( private dialog: MatDialog,
                private httpClientService: HttpClientService,
-               private formBuilder: FormBuilder
+               private formBuilder: FormBuilder,
+               private router: Router,
+               private rowDataService: LocalRowDataStorageService
               ) {
     this.showAlert = false;
   }
@@ -178,6 +182,12 @@ export class VehicleDetailsComponent implements OnInit {
     XLSX.writeFile(workBook, 'rmsVehicleData.xlsx');
 
 
+  }
+
+
+  redirectToDetailsPage(rowData) {
+    this.rowDataService.selectionEvent(rowData);
+    this.router.navigate(['/admin/vehicleinfodetails']);
   }
 
 
