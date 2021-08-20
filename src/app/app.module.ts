@@ -47,10 +47,7 @@ const appRoutes: Routes = [
      {path: 'terms', component: TermsComponent},
      {path: 'about', component: AboutusComponent },
   ]
-
-
   }
-
 ];
 
 @NgModule({
