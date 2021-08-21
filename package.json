@@ -1,6 +1,6 @@
 {
   "name": "fleet-management",
-  "version": "0.0.0",
+  "version": "0.0.1-beta",
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
@@ -33,8 +33,7 @@
     "highcharts": "^9.0.0",
     "highcharts-angular": "^2.4.0",
     "mdbootstrap": "^4.12.0",
-    "ng-vertical-timeline": "^0.1.1",
- 
+    "ng-vertical-timeline": "^0.1.1", 
     "ngx-trend": "^7.0.0",
     "ngx-wow": "^2.0.1",
     "path": "^0.12.7",
