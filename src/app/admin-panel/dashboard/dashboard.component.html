@@ -4,163 +4,156 @@
         <span>Dashboard</span>
         <span class="example-spacer"></span>
         <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-                <mat-icon>home</mat-icon>
+            <mat-icon>home</mat-icon>
         </button>
 
     </mat-toolbar>
-  
-            
-                    <div class="rfms-chart-wrapper mt-3">
-            
-                            <div class="rfms-charts ml-2">
-                                <mat-card class="rfms-chart-matcard">
-                                    <mat-card-title>
-                                        <h5>Revenue</h5>
-                                    </mat-card-title>
-                                    <mat-card-content>
-                                        <div class="rfms-card-revenue">
-                                            <h2>Rs.</h2>8943.98
-                                        </div>
-                    
-                                    </mat-card-content>
-                                </mat-card>
-                            </div>
-                            
-                            <div class="rfms-charts ml-2">
-                                <mat-card class="rfms-chart-matcard">
-                                    <mat-card-title>
-                                        <h5>Km Covered</h5>
-                                    </mat-card-title>
-                                    <mat-card-content>
-                                        <div class="rfms-kmcovered">
-                                            <h2> 7839.34</h2>
-                                            <ngx-trend [data]="[0, 897, 943, 950, 996]" [gradient]="['#0AF', '#F0F', '#FF0']"
-                                                autoDraw="true" autoDrawDuration="3000" autoDrawEasing="ease-in"></ngx-trend>
-                                        </div>
-                    
-                                    </mat-card-content>
-                                </mat-card>
-                            </div>
-                    
-                            <div class="rfms-charts ml-2">
-                                <mat-card class="rfms-chart-matcard">
-                                    <mat-card-title>
-                                        <h5>Vehicles Count</h5>
-                                    </mat-card-title>
-                                    <mat-card-content>
-                                        <div class="rfms-vehiclecount-info">
-                                            <h2>{{vehicleCount}} </h2>
-                    
-                                            <ngx-trend [data]="[0, 10, 5, 22, 3.6, 11]" [gradient]="['#0FF', '#F0F', '#FF0']"
-                                                autoDraw="true" autoDrawDuration="3000" autoDrawEasing="ease-in"></ngx-trend>
-                                        </div>
-                                    </mat-card-content>
-                                </mat-card>
-                            </div>
-                    
-                        </div>
-    
-   
-    
- 
+
+    <div class="rfms-chart-wrapper mt-3">
+
+        <div class="rfms-charts ml-2">
+            <mat-card class="rfms-chart-matcard">
+                <mat-card-title>
+                    <h5>Revenue</h5>
+                </mat-card-title>
+                <mat-card-content>
+                    <div class="rfms-card-revenue">
+                        <h2>Rs.</h2>8943.98
+                    </div>
+
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+        <div class="rfms-charts ml-2">
+            <mat-card class="rfms-chart-matcard">
+                <mat-card-title>
+                    <h5>Km Covered</h5>
+                </mat-card-title>
+                <mat-card-content>
+                    <div class="rfms-kmcovered">
+                        <h2> 7839.34</h2>
+                        <ngx-trend [data]="[0, 897, 943, 950, 996]" [gradient]="['#0AF', '#F0F', '#FF0']"
+                            autoDraw="true" autoDrawDuration="3000" autoDrawEasing="ease-in"></ngx-trend>
+                    </div>
+
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+        <div class="rfms-charts ml-2">
+            <mat-card class="rfms-chart-matcard">
+                <mat-card-title>
+                    <h5>Vehicles Count</h5>
+                </mat-card-title>
+                <mat-card-content>
+                    <div class="rfms-vehiclecount-info">
+                        <h2>{{vehicleCount}} </h2>
+
+                        <ngx-trend [data]="[0, 10, 5, 22, 3.6, 11]" [gradient]="['#0FF', '#F0F', '#FF0']"
+                            autoDraw="true" autoDrawDuration="3000" autoDrawEasing="ease-in"></ngx-trend>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+    </div>
 
     <div class="rfms-buttons-wrapper col-md-3 mt-2">
         <div class="row">
             <div class="col">
-                    <mat-card class="rfms-chart-matcard">
-                            <mat-card-title>
-                                Trip Details &nbsp;<i class="fas fa-plane-departure"></i>
-                            </mat-card-title>
-                            <mat-card-content class="rfms-add-buttons">
-                                <div>
-                                    <button mat-raised-button color="primary">Add Trip Detail</button>
-                                </div>
-                
-                                <div>
-                                    <button mat-raised-button color="primary">View Trip Detail</button>
-                                </div>
-                
-                            </mat-card-content>
-                
-                
-                        </mat-card>
-            </div>            
-        </div>  
+                <mat-card class="rfms-chart-matcard">
+                    <mat-card-title>
+                        Trip Details &nbsp;<i class="fas fa-plane-departure"></i>
+                    </mat-card-title>
+                    <mat-card-content class="rfms-add-buttons">
+                        <div>
+                            <button mat-raised-button color="primary">Add Trip Detail</button>
+                        </div>
+
+                        <div>
+                            <button mat-raised-button color="primary">View Trip Detail</button>
+                        </div>
+
+                    </mat-card-content>
+
+
+                </mat-card>
+            </div>
+        </div>
     </div>
 
     <div class="rfms-buttons-wrapper col-md-3 mt-2">
-            <div class="row">
-                <div class="col">
-                        <mat-card class="rfms-chart-matcard">
-                                <mat-card-title>
-                                    Fuel Details 
-                                    <i class="fas fa-gas-pump"></i>
-                                </mat-card-title>
-                                <mat-card-content class="rfms-add-buttons">
-                                    <div>
-                                        <button mat-raised-button color="primary">Add Fuel Detail</button>
-                                    </div>
-                    
-                                    <div>
-                                        <button mat-raised-button color="primary">View Fuel Details</button>
-                                    </div>
-                    
-                                </mat-card-content>
-                    
-                    
-                            </mat-card>
-                </div>            
-            </div>  
-    </div>
-    
-    <div class="rfms-buttons-wrapper col-md-3 mt-2">
-            <div class="row">
-                <div class="col">
-                        <mat-card class="rfms-chart-matcard">
-                                <mat-card-title>
-                                    Driver Details <i class="fas fa-user"></i>
-                                </mat-card-title>
-                                <mat-card-content class="rfms-add-buttons">
-                                    <div>
-                                        <button mat-raised-button color="primary">Add Driver Detail</button>
-                                    </div>
-                    
-                                    <div>
-                                        <button mat-raised-button color="primary">View Driver Detail</button>
-                                    </div>
-                    
-                                </mat-card-content>
-                    
-                    
-                            </mat-card>
-                </div>            
-            </div>  
+        <div class="row">
+            <div class="col">
+                <mat-card class="rfms-chart-matcard">
+                    <mat-card-title>
+                        Fuel Details
+                        <i class="fas fa-gas-pump"></i>
+                    </mat-card-title>
+                    <mat-card-content class="rfms-add-buttons">
+                        <div>
+                            <button mat-raised-button color="primary">Add Fuel Detail</button>
+                        </div>
+
+                        <div>
+                            <button mat-raised-button color="primary">View Fuel Details</button>
+                        </div>
+
+                    </mat-card-content>
+
+
+                </mat-card>
+            </div>
+        </div>
     </div>
 
-      <div class="rfms-buttons-wrapper col-md-3 mt-2">
-            <div class="row">
-                <div class="col">
-                        <mat-card class="rfms-chart-matcard">
-                                <mat-card-title>
-                                    Vehicle Details &nbsp; <i class="fas fa-truck-moving"></i>
-                                </mat-card-title>
-                                <mat-card-content class="rfms-add-buttons">
-                                    <div>
-                                        <button mat-raised-button color="primary">Add Vehicle Detail</button>
-                                    </div>
-                    
-                                    <div>
-                                        <button mat-raised-button color="primary">View Vehicle Detail</button>
-                                    </div>
-                    
-                                </mat-card-content>
-                    
-                    
-                            </mat-card>
-                </div>            
-            </div>  
-    </div>  
- 
- 
+    <div class="rfms-buttons-wrapper col-md-3 mt-2">
+        <div class="row">
+            <div class="col">
+                <mat-card class="rfms-chart-matcard">
+                    <mat-card-title>
+                        Driver Details <i class="fas fa-user"></i>
+                    </mat-card-title>
+                    <mat-card-content class="rfms-add-buttons">
+                        <div>
+                            <button mat-raised-button color="primary">Add Driver Detail</button>
+                        </div>
+
+                        <div>
+                            <button mat-raised-button color="primary">View Driver Detail</button>
+                        </div>
+
+                    </mat-card-content>
+
+
+                </mat-card>
+            </div>
+        </div>
+    </div>
+
+    <div class="rfms-buttons-wrapper col-md-3 mt-2">
+        <div class="row">
+            <div class="col">
+                <mat-card class="rfms-chart-matcard">
+                    <mat-card-title>
+                        Vehicle Details &nbsp; <i class="fas fa-truck-moving"></i>
+                    </mat-card-title>
+                    <mat-card-content class="rfms-add-buttons">
+                        <div>
+                            <button mat-raised-button color="primary">Add Vehicle Detail</button>
+                        </div>
+
+                        <div>
+                            <button mat-raised-button color="primary">View Vehicle Detail</button>
+                        </div>
+
+                    </mat-card-content>
+
+
+                </mat-card>
+            </div>
+        </div>
+    </div>
 
 </div>
