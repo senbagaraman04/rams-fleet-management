@@ -1,29 +1,59 @@
-<div class="dashboard-component">
+<div class="rfms-dashboard-outerwrapper">
+    <mat-toolbar color="primary">
 
-<div class="row">
-    <div class="col-md-6 mapcard">
-            <app-map> </app-map>
+        <span>Dashboard</span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            Results
+        </button>
+
+    </mat-toolbar>
+    <div class="rfms-chart-wrapper">
+
+        <div class="rfms-charts">
+            <mat-card class="rfms-chart-matcard">
+                <mat-card-title>
+                    <h5>Vehicles Count</h5>
+                </mat-card-title>
+                <mat-card-content>
+                    <div class="vehiclecount">{{vehicleCount}}</div>
+                    <div class="vehicleTrends"></div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="rfms-charts">
+            <mat-card class="rfms-chart-matcard">
+                <mat-card-title>
+                    <h5>Vehicles Count</h5>
+                </mat-card-title>
+                <mat-card-content>
+                    <div class="vehiclecount">{{vehicleCount}}</div>
+                    <div class="vehicleTrends"></div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="rfms-charts">
+            <mat-card class="rfms-chart-matcard">
+                <mat-card-title>
+                    <h5>Vehicles Count</h5>
+                </mat-card-title>
+                <mat-card-content>
+                    <div class="vehiclecount">{{vehicleCount}}</div>
+                    <div class="vehicleTrends"></div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="rfms-charts">
+            <mat-card class="rfms-chart-matcard">
+                <mat-card-title>
+                    <h5>Vehicles Count</h5>
+                </mat-card-title>
+                <mat-card-content>
+                    <div class="vehiclecount">{{vehicleCount}}</div>
+                    <div class="vehicleTrends"></div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
     </div>
-
-     <div class="col-md-6 mapcard">
-           <app-chart> </app-chart>
-    </div>
-
 </div>
-
-<div class="row">
-    
-<div class="col-md-6 mapcard">
-        <app-chart> </app-chart>
- </div>
-
-     <div class="col-md-6 mapcard">
-           <app-chart> </app-chart>
-    </div>
-
-</div>
-
-
-</div>
-
- 

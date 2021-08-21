@@ -10,6 +10,9 @@ export class DashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.vehicleCount = 0;
   }
+
+  private vehicleCount: number;
 
 }

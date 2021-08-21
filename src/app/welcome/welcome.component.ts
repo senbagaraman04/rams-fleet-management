@@ -86,6 +86,7 @@ export class WelcomeComponent implements OnInit, AfterViewInit {
       return;
 
     }
+    this.checkLogin();
     console.log('done');
 
   }
@@ -94,15 +95,18 @@ export class WelcomeComponent implements OnInit, AfterViewInit {
   }
 
   checkLogin() {
+    console.log("Came here...");
+    this.router.navigate(['/admin/dashboard']);
     this.flagsCheck = true;
-    if (this.loginForm.controls.username.value === environment.userName &&
-          this.loginForm.controls.password.value === environment.password) {
-     this.message = 'login success';
-     this.router.navigate(['/admin/dashboard']);
+    
+  //   if (this.loginForm.controls.username.value === environment.userName &&
+  //         this.loginForm.controls.password.value === environment.password) {
+  //    this.message = 'login success';
+    
 
-   } else {
-     this.message = 'Username or password is incorrect';
-   }
+  //  } else {
+  //    this.message = 'Username or password is incorrect';
+  //  }
 
  }
 }

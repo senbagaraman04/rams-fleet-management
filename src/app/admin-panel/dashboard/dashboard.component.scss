@@ -1,10 +1,17 @@
-.dashboard-component {
-    margin-left: 10px;
-    margin-top: 10px;
+.example-spacer {
+    flex: 1 1 auto;
+  }
+.rfms-chart-wrapper{
+    display: flex;
+    margin: 0 8px;
 }
-
-.mapcard {
-    border: 1px solid teal;
-    height: 100%;
+.rfms-charts{
     width: 100%;
+    .rfms-chart-matcard{
+        box-shadow: 0 3px 11px 0 #e8eafc, 0 3px 3px -2px hsl(0deg 0% 70% / 10%),
+         0 1px 8px 0 hsl(0deg 0% 60% / 10%);
+        height: 192px;
+        flex-direction: column;
+    }
+   
 }
