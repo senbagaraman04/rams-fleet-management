@@ -8,7 +8,7 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NgVerticalTimelineModule  } from 'ng-vertical-timeline';
 import {DemoMaterialModule} from './material-module';
-import { MatCardModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule } from '@angular/material';
+import { MatCardModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule, MatDatepickerModule } from '@angular/material';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { VehicleDetailsComponent } from './admin-panel/vehicle-details/vehicle-details.component';
 import {MatTableModule} from '@angular/material';
@@ -29,6 +29,7 @@ import { LocalRowDataStorageService } from './service/local-data-storage.service
 import { FourCardSectionComponent } from './home/four-card-section/four-card-section.component';
 import { TrendModule } from 'ngx-trend';
 import { TripDetailsComponent } from './admin-panel/trip-details/trip-details.component';
+import { AddNewVehicleComponent } from './admin-panel/add-new-vehicle/add-new-vehicle.component';
  
 
 
@@ -44,7 +45,8 @@ const appRoutes: Routes = [
      {path: 'driver', component: DriverDetailsComponent},
      {path: 'terms', component: TermsComponent},
      {path: 'about', component: AboutusComponent },
-     {path:'viewtrip', component: TripDetailsComponent}
+     {path:'viewtrip', component: TripDetailsComponent},
+     {path:'addvehicle', component: AddNewVehicleComponent}
   ]
   }
 ];
@@ -65,6 +67,7 @@ const appRoutes: Routes = [
     VehicleInfoDetailsComponent,
     FourCardSectionComponent,
     TripDetailsComponent,
+    AddNewVehicleComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,6 +78,7 @@ const appRoutes: Routes = [
     NgwWowModule,
     RouterModule,
     MatCardModule,
+    MatDatepickerModule,
     MatTableModule,
     NgVerticalTimelineModule,
     CdkTableModule,

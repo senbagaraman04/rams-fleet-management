@@ -6,6 +6,9 @@ import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
   styleUrls: ['./trip-details.component.scss']
 })
 export class TripDetailsComponent implements OnInit {
+  ngOnInit(): void {
+    
+  }
   displayedColumns = ['tripid', 'vnumber', 'drivername', 'tripdate', 'triplocation'];
   dataSource: MatTableDataSource<UserData>;
 

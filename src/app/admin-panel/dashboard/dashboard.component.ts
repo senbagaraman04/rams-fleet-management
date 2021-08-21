@@ -6,6 +6,9 @@ import { Router } from '@angular/router';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
+/**
+ * Base calss for Dashboard Page.
+ */
 export class DashboardComponent implements OnInit {
 
   constructor(private router:Router) { }
@@ -14,9 +17,20 @@ export class DashboardComponent implements OnInit {
     this.vehicleCount = 0;
   }
 
+  /**
+   * invoked when the user clicks the view trip button
+   */
   public onViewTripClick(){
    
     this.router.navigate(['/admin/viewtrip']);
+  }
+
+  /**
+   * invoked when the user clicks add new vehicle button
+   * The user will be redirected to the add new vehicle component
+   */
+  public onAddnewVehicleClick(){
+    this.router.navigate(['/admin/addvehicle']);
   }
 
   private vehicleCount: number;
