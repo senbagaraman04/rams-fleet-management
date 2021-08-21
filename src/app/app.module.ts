@@ -24,7 +24,6 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { DriverDetailsComponent } from './admin-panel/driver-details/driver-details.component';
 import { ServiceInsuranceComponent } from './admin-panel/service-insurance/service-insurance.component';
 import { DashboardComponent } from './admin-panel/dashboard/dashboard.component';
-import { MapComponent } from './admin-panel/dashboard/map/map.component';
 import { VehicleInfoDetailsComponent } from './admin-panel/vehicle-info-details/vehicle-info-details.component';
 import { LocalRowDataStorageService } from './service/local-data-storage.service';
 import { FourCardSectionComponent } from './home/four-card-section/four-card-section.component';
@@ -60,7 +59,6 @@ const appRoutes: Routes = [
     DriverDetailsComponent,
     ServiceInsuranceComponent,
     DashboardComponent,
-    MapComponent,
     VehicleInfoDetailsComponent,
     FourCardSectionComponent,
   ],
