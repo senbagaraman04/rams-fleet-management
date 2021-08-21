@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
 html, body { height: 100%; }
-body { margin: 0; font-family: "Ubuntu", sans-serif !important; }
-
+body { margin: 0; font-family: "Ubuntu", sans-serif !important;  background-color: hsl(0, 0%, 98%); }
+ 
 
 .mat-drawer-content {
      overflow-x: hidden !important;

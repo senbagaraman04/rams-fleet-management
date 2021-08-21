@@ -27,16 +27,13 @@ import { DashboardComponent } from './admin-panel/dashboard/dashboard.component'
 import { MapComponent } from './admin-panel/dashboard/map/map.component';
 import { VehicleInfoDetailsComponent } from './admin-panel/vehicle-info-details/vehicle-info-details.component';
 import { LocalRowDataStorageService } from './service/local-data-storage.service';
+import { FourCardSectionComponent } from './home/four-card-section/four-card-section.component';
 
 
 
 const appRoutes: Routes = [
-  {path: '', component: HomeComponent,
-  children: [
-    { path: '', redirectTo : 'welcome', pathMatch: 'full' },
-    { path: 'welcome', component: WelcomeComponent}
-  ]
-},
+  {path: '', component: HomeComponent},
+{path: 'welcome', component: WelcomeComponent},
    {path: 'admin', component: AdminPanelComponent,
   children: [
      {path: 'dashboard', component: DashboardComponent},
@@ -65,6 +62,7 @@ const appRoutes: Routes = [
     DashboardComponent,
     MapComponent,
     VehicleInfoDetailsComponent,
+    FourCardSectionComponent,
   ],
   imports: [
     BrowserModule,
