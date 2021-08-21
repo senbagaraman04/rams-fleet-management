@@ -28,6 +28,7 @@ import { VehicleInfoDetailsComponent } from './admin-panel/vehicle-info-details/
 import { LocalRowDataStorageService } from './service/local-data-storage.service';
 import { FourCardSectionComponent } from './home/four-card-section/four-card-section.component';
 import { TrendModule } from 'ngx-trend';
+import { TripDetailsComponent } from './admin-panel/trip-details/trip-details.component';
  
 
 
@@ -43,6 +44,7 @@ const appRoutes: Routes = [
      {path: 'driver', component: DriverDetailsComponent},
      {path: 'terms', component: TermsComponent},
      {path: 'about', component: AboutusComponent },
+     {path:'viewtrip', component: TripDetailsComponent}
   ]
   }
 ];
@@ -62,6 +64,7 @@ const appRoutes: Routes = [
     DashboardComponent,
     VehicleInfoDetailsComponent,
     FourCardSectionComponent,
+    TripDetailsComponent,
   ],
   imports: [
     BrowserModule,
