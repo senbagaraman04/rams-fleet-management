@@ -27,6 +27,7 @@ import { DashboardComponent } from './admin-panel/dashboard/dashboard.component'
 import { VehicleInfoDetailsComponent } from './admin-panel/vehicle-info-details/vehicle-info-details.component';
 import { LocalRowDataStorageService } from './service/local-data-storage.service';
 import { FourCardSectionComponent } from './home/four-card-section/four-card-section.component';
+import { TrendModule } from 'ngx-trend';
 
 
 
@@ -84,6 +85,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     HighchartsChartModule,
     DemoMaterialModule,
+    TrendModule,
     RouterModule.forRoot(appRoutes)
 
   ],

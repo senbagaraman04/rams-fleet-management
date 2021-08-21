@@ -13,11 +13,13 @@
         <div class="rfms-charts">
             <mat-card class="rfms-chart-matcard">
                 <mat-card-title>
-                    <h5>Vehicles Count</h5>
+                    <h5>Revenue</h5>
                 </mat-card-title>
                 <mat-card-content>
-                    <div class="vehiclecount">{{vehicleCount}}</div>
-                    <div class="vehicleTrends"></div>
+                    <div class="rfms-card-revenue">
+                            <h2>Rs.</h2>8943.98
+                    </div>
+                    
                 </mat-card-content>
             </mat-card>
         </div>
@@ -49,8 +51,15 @@
                     <h5>Vehicles Count</h5>
                 </mat-card-title>
                 <mat-card-content>
-                    <div class="vehiclecount">{{vehicleCount}}</div>
-                    <div class="vehicleTrends"></div>
+                    <div class="rfms-vehiclecount-info">
+                        <h2>{{vehicleCount}} </h2>
+                     
+                            <ngx-trend [data]="[0, 10, 5, 22, 3.6, 11]"  
+                            [gradient]="['#0FF', '#F0F', '#FF0']"
+                             autoDraw="true"
+                            autoDrawDuration="3000"
+                            autoDrawEasing="ease-in"></ngx-trend>
+                    </div>
                 </mat-card-content>
             </mat-card>
         </div>
