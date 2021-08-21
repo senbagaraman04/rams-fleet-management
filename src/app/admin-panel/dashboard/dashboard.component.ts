@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
  
 @Component({
   selector: 'app-dashboard',
@@ -7,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
     this.vehicleCount = 0;
+  }
+
+  public onViewTripClick(){
+   
+    this.router.navigate(['/admin/viewtrip']);
   }
 
   private vehicleCount: number;
