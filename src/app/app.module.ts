@@ -28,7 +28,7 @@ import { VehicleInfoDetailsComponent } from './admin-panel/vehicle-info-details/
 import { LocalRowDataStorageService } from './service/local-data-storage.service';
 import { FourCardSectionComponent } from './home/four-card-section/four-card-section.component';
 import { TrendModule } from 'ngx-trend';
-
+ 
 
 
 const appRoutes: Routes = [
@@ -85,7 +85,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     HighchartsChartModule,
     DemoMaterialModule,
-    TrendModule,
+    TrendModule,  
     RouterModule.forRoot(appRoutes)
 
   ],
