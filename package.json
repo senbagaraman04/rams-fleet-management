@@ -32,7 +32,7 @@
     "highcharts": "^9.0.0",
     "highcharts-angular": "^2.4.0",
     "mdbootstrap": "^4.12.0",
-    "ng-vertical-timeline": "^0.1.1",
+   
     "ngx-wow": "^2.0.1",
     "path": "^0.12.7",
     "rxjs": "~6.4.0",
