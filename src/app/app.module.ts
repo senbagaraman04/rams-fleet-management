@@ -1,19 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgwWowModule } from 'ngx-wow';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { RouterModule, Routes } from '@angular/router';
-import { NgVerticalTimelineModule  } from 'ng-vertical-timeline';
 import {DemoMaterialModule} from './material-module';
-import { MatCardModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule, MatDatepickerModule } from '@angular/material';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { VehicleDetailsComponent } from './admin-panel/vehicle-details/vehicle-details.component';
-import {MatTableModule} from '@angular/material';
 import {CdkTableModule} from '@angular/cdk/table';
-import {MatSortModule, MatDialogModule} from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { TermsComponent } from './terms/terms.component';
 import { ChartComponent } from './admin-panel/chart/chart.component';
@@ -30,8 +24,18 @@ import { FourCardSectionComponent } from './home/four-card-section/four-card-sec
 import { TrendModule } from 'ngx-trend';
 import { TripDetailsComponent } from './admin-panel/trip-details/trip-details.component';
 import { AddNewVehicleComponent } from './admin-panel/add-new-vehicle/add-new-vehicle.component';
- 
+import { NgModule } from '@angular/core';
 
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -73,26 +77,23 @@ const appRoutes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     BrowserModule,
-    MatTableModule,
     MatSortModule,
     NgwWowModule,
     RouterModule,
     MatCardModule,
     MatDatepickerModule,
     MatTableModule,
-    NgVerticalTimelineModule,
     CdkTableModule,
     MatSortModule,
     FormsModule, ReactiveFormsModule,
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatRippleModule,
     MatDialogModule,
     HttpClientModule,
     HighchartsChartModule,
     DemoMaterialModule,
-    TrendModule,  
+    TrendModule,
     RouterModule.forRoot(appRoutes)
 
   ],
